@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techno International New Town</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Font (Inter) - Merged from previous version -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root { --brand-red: #D2232A; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+
+        /* Make secondary nav items evenly distribute and always fit one line */
+        .secondary-nav { display: flex; align-items: center; gap: 0; }
+        .secondary-nav a, .secondary-nav button {
+          flex: 1 1 0; /* allow items to shrink/grow evenly */
+          text-align: center;
+          padding: 10px 8px;
+          font-size: 0.9rem;
+          white-space: nowrap;
+          border-left: 1px solid rgba(255,255,255,0.08);
+          /* Add hover effect */
+          @apply hover:bg-white/5;
+        }
+        .secondary-nav a:first-child, .secondary-nav button:first-child { border-left: none; }
+
+        /* On very small screens, reduce font and padding so it still fits in one line */
+        @media (max-width: 640px) {
+          .secondary-nav a, .secondary-nav button { font-size: 0.78rem; padding: 8px 6px; }
+        }
+
+        /* Mega menu helpers unchanged */
+        .mega-hidden { opacity: 0; pointer-events: none; transform: translateY(6px); }
+        .mega-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+        .transition-smooth { transition: opacity 180ms ease, transform 180ms ease; }
+        
+        /* --- Merged Styles from old version (to keep page content styled) --- */
+        .btn-red { @apply bg-red-600 text-white px-5 py-3 rounded-lg font-semibold hover:bg-red-700 transition-all duration-300; }
+        .btn-red-outline { @apply border border-red-600 text-red-600 px-5 py-3 rounded-lg font-semibold hover:bg-red-600 hover:text-white transition-all duration-300; }
+        .sticky-footer-bar { position: fixed; bottom: 0; left: 0; width: 100%; background-color: var(--brand-red); color: white; text-align: center; padding: 12px; z-index: 100; @apply font-bold text-lg shadow-2xl; }
+        .section-title {
+            @apply text-3xl lg:text-4xl font-bold text-gray-800 mb-4 text-center;
+        }
+        .section-subtitle {
+            @apply text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto;
+        }
+        
+        /* Hero slides */
+         #hero { min-height: 520px; }
+         .hero-slide { 
+            transition: opacity 800ms ease; 
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+        }
+         .hero-slide.opacity-1 { opacity: 1 !important; }
+         .hero-slide.opacity-0 { opacity: 0 !important; }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+<!-- Top Black Header Bar -->
+<div class="bg-black text-white text-sm py-2 px-6 flex flex-wrap justify-between items-center">
+    <div class="flex items-center space-x-3">
+        <span>Register Now for CU Joint Campus Placement Programme</span>
+        <a href="#" class="bg-red-600 text-white font-semibold px-4 py-1 rounded hover:bg-red-700 transition">REGISTER NOW</a>
+    </div>
+    <div class="flex items-center space-x-4 text-white text-sm">
+        <a href="#" class="hover:text-gray-300 flex items-center space-x-1"><i class="fab fa-whatsapp"></i><span>Whatsapp</span></a>
+        <a href="tel:1800121288800" class="hover:text-gray-300 flex items-center space-x-1"><i class="fas fa-phone-alt"></i><span>Call Us</span></a>
+        <a href="#" class="hover:text-gray-300"><i class="fas fa-compass"></i> <span>360°</span></a>
+        <a href="#" class="hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-gray-300"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-gray-300"><i class="fab fa-youtube"></i></a>
+    </div>
+</div>
+
+<!-- Main Header Section -->
+<header class="bg-neutral-900 text-white py-4 px-4 md:px-8 flex flex-wrap justify-between items-center sticky top-0 z-50 shadow-lg">
+    <!-- Left: TINT and TIG Logos -->
+    <div class="flex items-center space-x-4">
+        <img src="https://upload.wikimedia.org/wikipedia/en/e/ed/Techno_International_New_Town_Logo.png" alt="TINT Logo" class="h-12 w-auto">
+        <div class="h-8 border-l border-gray-600"></div>
+        <img src="https://yt3.googleusercontent.com/ytc/AIdro_l-ca9f-CTE8cZE_RK6bgPWoL_M5FpDsOlWNQKFw0z37Q=s900-c-k-c0x00ffffff-no-rj" alt="TIG Logo" class="h-12 w-12 rounded-full">
+    </div>
+
+    <!-- Middle: Primary Links (desktop) -->
+    <nav class="hidden md:flex space-x-6 text-sm font-medium uppercase">
+        <a href="#" class="hover:text-red-500">Campuses</a>
+        <a href="#" class="hover:text-red-500">International</a>
+        <a href="#" class="hover:text-red-500">Library</a>
+        <a href="#" class="hover:text-red-500">Student Services</a>
+        <a href="#" class="hover:text-red-500">Career</a>
+        <a href="#" class="hover:text-red-500">Blogs</a>
+        <a href="#" class="hover:text-red-500">CU Podcast</a>
+        <a href="#" class="hover:text-red-500">Contact Us</a>
+    </nav>
+
+    <!-- Right: Admission Helpline & NAAC -->
+    <div class="flex items-center space-x-4">
+        <a href="tel:1800121288800" class="flex items-center bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2 rounded-lg transition">
+            <i class="fas fa-phone-alt mr-2 text-lg"></i>
+            <div>
+                <div class="text-xs leading-tight">Admission Helpline</div>
+                <div class="font-bold text-lg leading-tight">1800121288800</div>
+            </div>
+        </a>
+        <img src="https://bwecbapatla.in/wp-content/uploads/2427NAAC-B.png" alt="NAAC B++ Logo" class="h-12 w-auto">
+    </div>
+</header>
+
+<!-- Secondary Navigation Row (evenly fits one line) -->
+<nav class="bg-gray-800/70 backdrop-blur-sm py-2 border-b border-gray-700">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="secondary-nav">
+      <button id="about-trigger" class="text-white font-semibold uppercase tracking-wider inline-flex items-center justify-center">ABOUT <i class="fas fa-chevron-down ml-2 text-xs"></i></button>
+      <a href="#" id="programs-trigger" class="text-white font-semibold uppercase tracking-wider inline-flex items-center justify-center">PROGRAMS <i class="fas fa-chevron-down ml-2 text-xs"></i></a>
+      <button id="academics-trigger" class="text-white font-semibold uppercase tracking-wider inline-flex items-center justify-center">ACADEMICS <i class="fas fa-chevron-down ml-2 text-xs"></i></button>
+      <button id="admissions-trigger" class="text-white font-semibold uppercase tracking-wider inline-flex items-center justify-center">ADMISSIONS <i class="fas fa-chevron-down ml-2 text-xs"></i></button>
+      <button id="campus-trigger" class="text-white font-semibold uppercase tracking-wider inline-flex items-center justify-center">CAMPUS LIFE <i class="fas fa-chevron-down ml-2 text-xs"></i></button>
+      <button id="placements-trigger" class="text-white font-semibold uppercase tracking-wider inline-flex items-center justify-center">PLACEMENTS <i class="fas fa-chevron-down ml-2 text-xs"></i></button>
+      <button id="research-trigger" class="text-white font-semibold uppercase tracking-wider inline-flex items-center justify-center">RESEARCH & INNOVATION <i class="fas fa-chevron-down ml-2 text-xs"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION (full-width with sliding background and right-side form) -->
+<section id="hero" class="relative overflow-hidden">
+  <!-- background slides -->
+  <div id="hero-slides" class="absolute inset-0">
+    <div class="hero-slide opacity-0"></div>
+    <div class="hero-slide opacity-0"></div>
+    <div class="hero-slide opacity-0"></div>
+    <div class="hero-overlay absolute inset-0 bg-black/50"></div>
+  </div>
+
+  <div class="relative z-10 container mx-auto px-4 lg:px-8 py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+      <!-- Left content -->
+      <div class="lg:col-span-2 text-white space-y-6 max-w-2xl">
+        <h1 class="text-4xl lg:text-6xl font-extrabold leading-tight">Techno International Newtown</h1>
+        <p class="text-lg text-gray-200">Techno International Newtown, under Makaut University, integrates groundbreaking research and inclusive education to shape professionals driving innovation, sustainability, and social impact.</p>
+        <div class="flex items-center gap-4">
+          <a href="#admission-form-section" class="btn-red inline-flex items-center">APPLY TODAY <i class="fas fa-arrow-right ml-2"></i></a>
+        </div>
+      </div>
+
+      <!-- Right: Admission Form card -->
+      <div class="lg:col-span-1" id="admission-form-section">
+        <div class="bg-white p-6 rounded-xl shadow-2xl border border-gray-100 max-w-md ml-auto">
+          <h3 class="text-center text-sm text-gray-500 font-semibold">APPLY TODAY FOR</h3>
+          <h2 class="text-center text-2xl font-bold mt-1 uppercase">Techno International Newtown</h2>
+          <p class="text-center text-sm text-gray-600 font-medium mt-3">Admissions Open for 2026</p>
+
+          <form id="hero-admission-form" class="space-y-3 mt-6">
+            <input type="text" placeholder="STUDENT NAME" class="w-full px-4 py-3 border border-gray-200 rounded-lg"/>
+            <input type="email" placeholder="STUDENT EMAIL ID" class="w-full px-4 py-3 border border-gray-200 rounded-lg"/>
+            <input type="tel" placeholder="STUDENT MOBILE NO" class="w-full px-4 py-3 border border-gray-200 rounded-lg"/>
+            <div class="grid grid-cols-2 gap-3">
+              <select class="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-500"><option value="" disabled selected>Select DOB</option></select>
+              <select class="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-500"><option value="" disabled selected>Student City</option></select>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <select class="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-500"><option value="" disabled selected>Select Discipline</option></select>
+              <select class="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-500"><option value="" disabled selected>Select Program</option></select>
+            </div>
+            <div class="text-sm text-gray-500">By submitting this form, I agree to receive notifications from the University in the form of SMS/E-mail/Call.</div>
+            <button type="submit" class="bg-red-600 text-white w-full py-3 rounded-lg font-bold">APPLY NOW</button>
+            <p class="text-center text-sm mt-2">Already Registered? <a href="#" class="text-red-600 font-semibold">Click Here to Login</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- *** END OF NEW HERO SECTION *** -->
+
+
+<!-- ABOUT Mega Menu (positioned under the About button) -->
+<div id="about-mega" class="fixed top-[96px] w-[1100px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden" aria-hidden="true">
+  <div class="grid grid-cols-3 gap-6 p-8">
+    <div>
+      <h4 class="text-lg font-bold text-gray-800 mb-4">WHO WE ARE</h4>
+      <ul class="space-y-3 text-gray-700">
+        <li><a href="#" class="hover:text-red-600">Overview</a></li>
+        <li><a href="#" class="hover:text-red-600">Our Identity</a></li>
+        <li><a href="#" class="hover:text-red-600">Vision & Mission</a></li>
+        <li><a href="#" class="hover:text-red-600">LeaderShip</a></li>
+        <li><a href="#" class="hover:text-red-600">Core Values</a></li>
+        <li><a href="#" class="hover:text-red-600">Recognition & Approvals</a></li>
+        <li><a href="#" class="hover:text-red-600">Awards & Rankings</a></li>
+        <li><a href="#" class="hover:text-red-600">Institutional Social Responsibility</a></li>
+        <li><a href="#" class="hover:text-red-600">CU Edge</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-lg font-bold text-gray-800 mb-4">RELATED LINKS</h4>
+      <ul class="space-y-3 text-gray-700">
+        <li><a href="#" class="hover:text-red-600">Institutes & Departments</a></li>
+        <li><a href="#" class="hover:text-red-600">Admissions</a></li>
+        <li><a href="#" class="hover:text-red-600">Scholarships</a></li>
+        <li><a href="#" class="hover:text-red-600">Governance</a></li>
+        <li><a href="#" class="hover:text-red-600">Hostel Facility</a></li>
+        <li><a href="#" class="hover:text-red-600">Student Services</a></li>
+        <li><a href="#" class="hover:text-red-600">How to Reach Us?</a></li>
+        <li><a href="#" class="hover:text-red-600">GATI Charter Institution</a></li>
+        <li><a href="#" class="hover:text-red-600">ABET Engineering Accreditation</a></li>
+      </ul>
+    </div>
+
+    <div class="relative">
+      <div class="h-full rounded-lg overflow-hidden">
+        <img src="https://placehold.co/600x500/222/fff?text=TINT" alt="CU" class="w-full h-full object-cover opacity-90">
+        <div class="absolute inset-0 bg-red-600/85 grid grid-cols-2 grid-rows-2 text-white">
+          <div class="flex flex-col items-center justify-center border-r border-b border-white/10 p-6">
+            <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM6 18v-1a4 4 0 014-4h4a4 4 0 014 4v1"/></svg>
+            <div class="text-sm">Human Dignity</div>
+          </div>
+          <div class="flex flex-col items-center justify-center border-b border-white/10 p-6">
+            <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 20l9-5-9-5-9 5 9 5zM12 12v8"/></svg>
+            <div class="text-sm">Empathy</div>
+          </div>
+          <div class="flex flex-col items-center justify-center border-r border-white/10 p-6">
+            <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zM12 14v6"/></svg>
+            <div class="text-sm">Humility</div>
+          </div>
+          <div class="flex flex-col items-center justify-center p-6">
+            <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM12 12v8"/></svg>
+            <div class="text-sm">Giving</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMISSIONS Mega Menu (positioned under the Admissions button) -->
+<div id="admissions-mega" class="fixed top-[96px] w-[1100px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden" aria-hidden="true">
+  <div class="grid grid-cols-3 gap-6 p-8">
+    <div>
+      <h4 class="text-lg font-bold text-gray-800 mb-4">JOB ORIENTED PROGRAMS</h4>
+      <ul class="space-y-3 text-gray-700">
+        <li><a href="#" class="hover:text-red-600">After 12th</a></li>
+        <li><a href="#" class="hover:text-red-600">After Graduation</a></li>
+        <li><a href="#" class="hover:text-red-600">Leet Programs</a></li>
+        <li><a href="#" class="hover:text-red-600">Specialized Programs</a></li>
+        <li><a href="#" class="hover:text-red-600">Integrated Programs</a></li>
+        <li><a href="#" class="hover:text-red-600">After Post Graduation</a></li>
+        <li><a href="#" class="hover:text-red-600">CU Advantages</a></li>
+        <li><a href="#" class="hover:text-red-600">ABET Engineering Accreditation</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-lg font-bold text-gray-800 mb-4">ADMISSION</h4>
+      <ul class="space-y-3 text-gray-700">
+        <li><a href="#" class="hover:text-red-600">Overview</a></li>
+        <li><a href="#" class="hover:text-red-600">Course Fee</a></li>
+        <li><a href="#" class="hover:text-red-600">How to Apply?</a></li>
+        <li><a href="#" class="hover:text-red-600">Admission Criteria</a></li>
+        <li><a href="#" class="hover:text-red-600">CU Scholarship</a></li>
+        <li><a href="#" class="hover:text-red-600">Education Loan</a></li>
+        <li><a href="#" class="hover:text-red-600">Hostel Fee</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-lg font-bold text-gray-800 mb-4">OTHERS</h4>
+      <ul class="space-y-3 text-gray-700">
+        <li><a href="#" class="hover:text-red-600">National Admissions</a></li>
+        <li><a href="#" class="hover:text-red-600">International Admissions</a></li>
+        <li><a href="#" class="hover:text-red-600">Admission Offices</a></li>
+        <li><a href="#" class="hover:text-red-600">Visit the Campus</a></li>
+        <li><a href="#" class="hover:text-red-600">Migration Policy</a></li>
+        <li><a href="#" class="hover:text-red-600">Refund Policy</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ACADEMICS Mega Menu (positioned under the Academics button) -->
+<div id="academics-mega" class="fixed top-[96px] w-[1100px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden" aria-hidden="true">
+  <div class="grid grid-cols-3 gap-6 p-8">
+    <div>
+      <h4 class="text-lg font-bold text-gray-800 mb-4">ACADEMICS</h4>
+      <ul class="space-y-3 text-gray-700">
+        <li><a href="#" class="hover:text-red-600">Academics Overview</a></li>
+        <li><a href="#" classa="hover:text-red-600">Institutes</a></li>
+        <li><a href="#" class="hover:text-red-600">Program (Courses)</a></li>
+        <li><a href="#" class="hover:text-red-600">Academic Calendar</a></li>
+        <li><a href="#" class="hover:text-red-600">List of Holidays</a></li>
+        <li><a href="#" class="hover:text-red-600">Teaching Practices</a></li>
+        <li><a href="#" class="hover:text-red-600">System of Evaluation</a></li>
+        <li><a href="#" class="hover:text-red-600">Professional Bodies</a></li>
+        <li><a href="#" class="hover:text-red-600">Professors of Practice</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-lg font-bold text-gray-800 mb-4">RESOURCES</h4>
+      <ul class="space-y-3 text-gray-700">
+        <li><a href="#" class="hover:text-red-600">Library Services</a></li>
+        <li><a href="#" class="hover:text-red-600">E-Learning</a></li>
+        <li><a href="#" class="hover:text-red-600">Research & Development</a></li>
+        <li><a href="#" class="hover:text-red-600">Faculty Profiles</a></li>
+        <li><a href="#" class="hover:text-red-600">Examination Cell</a></li>
+      </ul>
+    </div>
+
+    <div class="relative">
+      <div class="h-full rounded-lg overflow-hidden">
+        <img src="https://placehold.co/600x500/222/fff?text=Academics+Panel" alt="Academics" class="w-full h-full object-cover opacity-90">
+        <div class="absolute inset-0 bg-red-600/85 grid grid-cols-2 grid-rows-2 text-white">
+          <div class="flex flex-col items-center justify-center border-r border-b border-white/10 p-6">
+            <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM6 18v-1a4 4 0 014-4h4a4 4 0 014 4v1"/></svg>
+            <div class="text-sm">Flexible Choice Based Credit System</div>
+          </div>
+          <div class="flex flex-col items-center justify-center border-b border-white/10 p-6">
+            <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 20l9-5-9-5-9 5 9 5zM12 12v8"/></svg>
+            <div class="text-sm">70+ Electives</div>
+          </div>
+          <div class="flex flex-col items-center justify-center border-r border-white/10 p-6">
+            <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zM12 14v6"/></svg>
+            <div class="text-sm">Advanced Technologies & Integration</div>
+          </div>
+          <div class="flex flex-col items-center justify-center p-6">
+            <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM12 12v8"/></svg>
+            <div class="text-sm">Project based & Experiential Learning</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CAMPUS LIFE Mega Menu (positioned under the Campus Life button) -->
+<div id="campus-mega" class="fixed top-[96px] w-[1100px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden" aria-hidden="true">
+  <div class="bg-red-600/85 text-white p-6 rounded-t-lg">
+    <div class="container mx-auto px-6 flex items-center justify-between">
+      <h3 class="text-2xl font-bold">A Home away from Home</h3>
+      <div class="flex gap-8">
+        <div class="text-center">
+          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
+          <div class="text-sm">Youth Festivals & Summits</div>
+        </div>
+        <div class="text-center">
+          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c2.21 0 4-1.79 4-4"/></svg>
+          <div class="text-sm">Culturally Diverse</div>
+        </div>
+        <div class="text-center">
+          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 20l9-5-9-5-9 5 9 5z"/></svg>
+          <div class="text-sm">Student-Friendly</div>
+        </div>
+        <div class="text-center">
+          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7h18"/></svg>
+          <div class="text-sm">Technology integration</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-cols-2 gap-6 p-8">
+    <div>
+      <ul class="space-y-4 text-gray-700">
+        <li><a href="#" class="hover:text-red-600">Overview</a></li>
+        <li><a href="#" class="hover:text-red-600">Convocations</a></li>
+        <li><a href="#" class="hover:text-red-600">Live-in-Concerts</a></li>
+        <li><a href="#" class="hover:text-red-600">Tech Invent & Events</a></li>
+        <li><a href="#" class="hover:text-red-600">Cultural & Cosmopolitan</a></li>
+        <li><a href="#" class="hover:text-red-600">Evoke & Youth Summits</a></li>
+        <li><a href="#" class="hover:text-red-600">Glorious Stars at CU</a></li>
+        <li><a href="#" class="hover:text-red-600">Sports & Adventure</a></li>
+        <li><a href="#" class="hover:text-red-600">Latest News</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul class="space-y-4 text-gray-700">
+        <li><a href="#" class="hover:text-red-600">Bollywood Celebrities</a></li>
+        <li><a href="#" class="hover:text-red-600">Prominent Visitors</a></li>
+        <li><a href="#" class="hover:text-red-600">CU-RHYTHMS International Folklore Festival</a></li>
+        <li><a href="#" class="hover:text-red-600">National & International Conferences</a></li>
+        <li><a href="#" class="hover:text-red-600">International Faculties</a></li>
+        <li><a href="#" class="hover:text-red-600">Notable Alumni</a></li>
+        <li><a href="#" class="hover:text-red-600">Canadian Alumni Chapter</a></li>
+        <li><a href="#" class="hover:text-red-600">Clubs, Communities, Department Societies & Student Chapters</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- PLACEMENTS Mega Menu (positioned under the Placements button) -->
+<div id="placements-mega" class="fixed top-[96px] w-[1100px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden" aria-hidden="true">
+  <div class="grid grid-cols-2 gap-6 p-8">
+    <div class="relative">
+      <div class="h-full rounded-lg overflow-hidden">
+        <img src="https://placehold.co/600x700/222/fff?text=Placements+Panel" alt="Placements" class="w-full h-full object-cover opacity-90">
+        <div class="absolute inset-0 bg-red-600/85 grid grid-cols-2 grid-rows-2 text-white">
+          <div class="flex flex-col items-center justify-center border-white/10 p-6">
+            <h3 class="text-2xl font-bold">Most sought after<br/><span class="text-red-200">Destination</span></h3>
+          </div>
+          <div class="flex items-center justify-center border-white/10 p-6">
+            <div class="grid grid-cols-2 gap-6 w-full text-center">
+              <div class="p-4"><img src="https://placehold.co/100x60/fff/000?text=G" alt="Google" class="mx-auto"/><div class="mt-2">Google</div></div>
+              <div class="p-4"><img src="https://placehold.co/100x60/fff/000?text=A" alt="Amazon" class="mx-auto"/><div class="mt-2">Amazon</div></div>
+              <div class="p-4"><img src="https://placehold.co/100x60/fff/000?text=M" alt="Microsoft" class="mx-auto"/><div class="mt-2">Microsoft</div></div>
+              <div class="p-4"><img src="https://placehold.co/100x60/fff/000?text=Mah" alt="Mahindra" class="mx-auto"/><div class="mt-2">Mahindra</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="text-lg font-bold text-gray-800 mb-4">PLACEMENTS</h4>
+      <ul class="space-y-3 text-gray-700">
+        <li><a href="#" class="hover:text-red-600">About Placements</a></li>
+        <li><a href="#" class="hover:text-red-600">Placement Tracker</a></li>
+        <li><a href="#" class="hover:text-red-600">Department of Career Planning & Development</a></li>
+        <li><a href="#" class="hover:text-red-600">Joint Placement Programme</a></li>
+        <li><a href="#" class="hover:text-red-600">Best Engineering Placement</a></li>
+        <li><a href="#" class="hover:text-red-600">Best Management Placement</a></li>
+        <li><a href="#" class="hover:text-red-600">Best Hotel Management Placement</a></li>
+        <li><a href="#" class="hover:text-red-600">Best Pharma Sciences Placement</a></li>
+        <li><a href="#" class="hover:text-red-600">Best Physics Placement</a></li>
+        <li><a href="#" class="hover:text-red-600">Best TCS Placement</a></li>
+        <li><a href="#" class="hover:text-red-600">Placement Day</a></li>
+        <li><a href="#" class="hover:text-red-600">Our Leading Recruiters</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- RESEARCH & INNOVATION Mega Menu (positioned under the Research trigger) -->
+<div id="research-mega" class="fixed top-[96px] w-[1100px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden" aria-hidden="true">
+  <div class="grid grid-cols-2 gap-6 p-0">
+    <div class="relative">
+      <img src="https://placehold.co/600x700/111/fff?text=Research+Panel" alt="Research" class="w-full h-full object-cover opacity-90 rounded-l-lg">
+      <div class="absolute inset-0 bg-black/50 grid grid-rows-4 gap-4 p-8">
+        <div class="text-white text-3xl font-bold">Our<br/><span class="text-red-500">Intellectual</span><br/>Pursuits</div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-red-600 rounded-lg p-6 text-white text-center">20000+<div class="text-sm">Research Publications</div></div>
+          <div class="bg-red-600 rounded-lg p-6 text-white text-center">5000+<div class="text-sm">Patents Filed</div></div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-red-600 rounded-lg p-6 text-white text-center">30<div class="text-sm">Industry Sponsored Labs</div></div>
+          <div class="bg-red-600 rounded-lg p-6 text-white text-center">200<div class="text-sm">Departmental Research Groups</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-8">
+      <h4 class="text-lg font-bold text-gray-800 mb-4">RESEARCH INTENSIVE UNIVERSITY</h4>
+      <ul class="space-y-3 text-gray-700 mb-6">
+        <li><a href="#" class="hover:text-red-600">Research</a></li>
+        <li><a href="#" class="hover:text-red-600">Patents</a></li>
+        <li><a href="#" class="hover:text-red-600">Centers Of Research</a></li>
+        <li><a href="#" class="hover:text-red-600">Centers of Excellence</a></li>
+        <li><a href="#" class="hover:text-red-600">Visiting Scholars</a></li>
+        <li><a href="#" class="hover:text-red-600">CU Global Management Review</a></li>
+        <li><a href="#" class="hover:text-red-600">CU Law Review (CULR)</a></li>
+      </ul>
+
+      <h4 class="text-lg font-bold text-gray-800 mb-4">ENTREPRENEURSHIP CELLS</h4>
+      <ul class="space-y-3 text-gray-700 mb-6">
+        <li><a href="#" class="hover:text-red-600">Technology Business Incubator (TBI)</a></li>
+        <li><a href="#" class="hover:text-red-600">Innovation & Entrepreneurship Development Cell (IEDC)</a></li>
+      </ul>
+
+      <h4 class="text-lg font-bold text-gray-800 mb-4">SUSTAINABLE DEVELOPMENT GOALS (SDG'S)</h4>
+      <ul class="space-y-3 text-gray-700">
+        <li><a href="#" class="hover:text-red-600">Policies & Strategies</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- PROGRAMS Mega Menu (positioned under the Programs button) -->
+<div id="program-mega" class="fixed top-[96px] w-[1100px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden" aria-hidden="true">
+  <!-- Top tab-like header -->
+  <div class="flex items-center border-b border-gray-200">
+    <div class="px-6 py-4 border-r border-gray-200 bg-gray-50 font-semibold">REGULAR <span class="ml-2 text-gray-400">⬇</span></div>
+    <div class="flex-1 px-6 py-4 text-sm font-medium">CLICK HERE TO VIEW PROGRAMS OF <span class="font-bold">ONLINE LEARNING (OL)</span> <span class="ml-2">↗</span></div>
+  </div>
+
+  <div class="grid grid-cols-4 gap-6 p-8">
+    <div>
+      <h4 class="text-lg font-bold text-gray-800 mb-4">REGULAR</h4>
+      <ul class="space-y-3 text-gray-700">
+        <li><a href="#" class="hover:text-red-600">Engineering</a></li>
+        <li><a href="#" class="hover:text-red-600">Management (BBA/MBA)</a></li>
+        <li><a href="#" class="hover:text-red-600">Industry Collaborated (BBA/MBA)</a></li>
+        <li><a href="#" class="hover:text-red-600">Computing (BCA/ MCA)</a></li>
+        <li><a href="#" class="hover:text-red-600">Airlines & Airport Management</a></li>
+        <li><a href="#" class="hover:text-red-600">Allied Health Sciences</a></li>
+        <li><a href="#" class="hover:text-red-600">Animation & Multimedia</a></li>
+        <li><a href="#" class="hover:text-red-600">Architecture</a></li>
+        <li><a href="#" class="hover:text-red-600">Arts & Humanities (B.A & M.A)</a></li>
+        <li><a href="#" class="hover:text-red-600">Basic Sciences</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-lg font-bold text-gray-800 mb-4">MORE PROGRAMS</h4>
+      <ul class="space-y-3 text-gray-700">
+        <li><a href="#" class="hover:text-red-600">Culinary Sciences</a></li>
+        <li><a href="#" class="hover:text-red-600">Data Science</a></li>
+        <li><a href="#" class="hover:text-red-600">Economics</a></li>
+        <li><a href="#" class="hover:text-red-600">Education (B.A.B.Ed/ B.Sc.B.Ed)</a></li>
+        <li><a href="#" class="hover:text-red-600">Fashion & Design</a></li>
+        <li><a href="#" class="hover:text-red-600">Finance & Accounting</a></li>
+        <li><a href="#" class="hover:text-red-600">Fine Arts</a></li>
+        <li><a href="#" class="hover:text-red-600">Forensic Sciences (B.Sc./M.Sc.)</a></li>
+        <li><a href="#" class="hover:text-red-600">Hotel & Hospitality Management</a></li>
+        <li><a href="#" class="hover:text-red-600">Interior Design</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-lg font-bold text-gray-800 mb-4">ADVANCED PROGRAMS</h4>
+      <ul class="space-y-3 text-gray-700">
+        <li><a href="#" class="hover:text-red-600">MBA Tourism, Hospitality and Aviation</a></li>
+        <li><a href="#" class="hover:text-red-600">Media Studies</a></li>
+        <li><a href="#" class="hover:text-red-600">Medical Lab Technology</a></li>
+        <li><a href="#" class="hover:text-red-600">Nutrition & Dietetics</a></li>
+        <li><a href="#" classa="hover:text-red-600">Optometry</a></li>
+        <li><a href="#" class="hover:text-red-600">Pharma Sciences</a></li>
+        <li><a href="#" class="hover:text-red-600">Physiotherapy</a></li>
+        <li><a href="#" class="hover:text-red-600">Product & Industrial Design</a></li>
+        <li><a href="#" class="hover:text-red-600">Psychology</a></li>
+        <li><a href="#" class="hover:text-red-600">MCA Data Science with Intel</a></li>
+      </ul>
+    </div>
+
+    <div class="relative">
+      <div class="h-full rounded-lg overflow-hidden">
+        <img src="https://placehold.co/380x500/222/fff?text=Placements+Panel" alt="Placements" class="w-full h-full object-cover opacity-90">
+        <div class="absolute inset-0 bg-gray-900/70 text-white p-6 flex flex-col justify-center">
+          <h3 class="text-xl font-bold">University with<br/><span class="text-red-500">Best Placements</span></h3>
+          <div class="mt-4 space-y-4">
+            <div class="bg-red-600 rounded px-4 py-3 inline-block">9000+<div class="text-xs">PLACEMENTS</div></div>
+            <div class="bg-red-600 rounded px-4 py-3 inline-block">1.7 CR<div class="text-xs">INTERNATIONAL</div></div>
+            <div class="bg-red-600 rounded px-4 py-3 inline-block">54.75 LPA<div class="text-xs">NATIONAL</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lower quick rows: Doctorate & Study Abroad -->
+  <div class="border-t border-gray-200 px-8 py-6 grid grid-cols-2 gap-6">
+    <div>
+      <h5 class="font-bold text-gray-800 mb-3 uppercase">DOCTORATE PROGRAMS</h5>
+      <div class="flex gap-6 text-gray-700">
+        <div>
+          <a href="#" class="block hover:text-red-600">Doctor of Philosophy</a>
+          <a href="#" class="block hover:text-red-600">Ph.D Admissions</a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h5 class="font-bold text-gray-800 mb-3 uppercase">STUDY ABROAD PROGRAMS</h5>
+      <div class="flex gap-6 text-gray-700">
+        <div>
+          <a href="#" class="block hover:text-red-600">Canada</a>
+          <a href="#" class="block hover:text-red-600">USA</a>
+          <a href="#" class="block hover:text-red-600">Australia</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <!-- 4. STATS SECTION (Illustrious Legacy) -->
+    <!-- This content is kept from the previous version -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <h2 class="section-title">An Illustrious Legacy to continue to Shape</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mt-12"> <!-- Changed to 5 columns -->
+                <div class="text-center">
+                    <div class="text-5xl font-extrabold text-red-600">154+</div>
+                    <div class="mt-2 text-lg font-medium text-gray-700">Programs</div>
+                    <p class="text-sm text-gray-500">Industry-Oriented Academic Programs</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-extrabold text-red-600">980+</div>
+                    <div class="mt-2 text-lg font-medium text-gray-700">Stalwarts</div>
+                    <p class="text-sm text-gray-500">Industry Stalwarts for Top-Tier Mentorship</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-extrabold text-red-600">1350+</div>
+                    <div class="mt-2 text-lg font-medium text-gray-700">Doctoral Faculty</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-extrabold text-red-600">300+</div>
+                    <div class="mt-2 text-lg font-medium text-gray-700">International Faculty</div>
+                </div>
+                <div class="text-center col-span-2 md:col-span-1">
+                    <div class="text-5xl font-extrabold text-red-600">100000+</div>
+                    <div class="mt-2 text-lg font-medium text-gray-700">Alumni Across the Globe</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ACCREDITATIONS SECTION -->
+    <!-- This content is kept from the previous version -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 lg:px-8">
+            <h2 class="section-title">Proudly Distinguished by Our Prestigious Rankings and AccreditATIONS</h2>
+            <!-- Updated placeholders to match video content -->
+            <div class="flex flex-wrap justify-center items-center gap-12 mt-12">
+                <img src="https://placehold.co/150x80/EEEEEE/777777?text=QS+Rankings" alt="QS University Rankings Asia" class="h-16 opacity-70">
+                <img src="https://placehold.co/150x80/EEEEEE/777777?text=NIRF" alt="NIRF Ranking" class="h-16 opacity-70">
+                <img src="https://placehold.co/150x80/EEEEEE/777777?text=NAAC+A+" alt="NAAC A+ Accreditation" class="h-16 opacity-70">
+                <img src="https://placehold.co/150x80/EEEEEE/777777?text=ABET" alt="ABET Accreditation" class="h-16 opacity-70">
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PLACEMENTS SECTION -->
+    <!-- This content is kept from the previous version -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <h2 class="section-title">The World's Leading Companies Hire Our Talent</h2>
+            
+            <!-- UPDATED stats to match the video -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl font-extrabold text-red-600">9000+</div>
+                    <div class="mt-2 text-lg font-medium text-gray-700">Placement Offers</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl font-extrabold text-red-600">1100+</div>
+                    <div class="mt-2 text-lg font-medium text-gray-700">Companies Visited</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl font-extrabold text-red-600">54.75 LPA</div>
+                    <div class="mt-2 text-lg font-medium text-gray-700">Highest National Package</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl font-extrabold text-red-600">1.7 CR</div>
+                    <div class="mt-2 text-lg font-medium text-gray-700">Highest International Package</div>
+                </div>
+            </div>
+
+            <!-- Student Spotlights - UPDATED packages to match video -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden flex">
+                    <img src="https://placehold.co/200x300/CCCCCC/FFFFFF?text=Siddhant" alt="Siddhant Bhardwaj" class="w-1/3 object-cover">
+                    <div class="p-6 flex flex-col justify-center">
+                        <h3 class="text-xl font-bold">Siddhant Bhardwaj</h3>
+                        <p class="text-gray-600">Hired by Dr. Dame Mortsit... (from video)</p>
+                        <p class="text-3xl font-bold text-red-600 mt-2">1.7 <span class="text-xl">CRORE</span></p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden flex">
+                    <img src="https://placehold.co/200x300/CCCCCC/FFFFFF?text=Gaurav" alt="Gaurav Kumar" class="w-1/3 object-cover">
+                    <div class="p-6 flex flex-col justify-center">
+                        <h3 class="text-xl font-bold">Gaurav Kumar</h3>
+                        <p class="text-gray-600">Placed at Nutanix</p>
+                        <p class="text-3xl font-bold text-red-600 mt-2">51.00 <span class="text-xl">LPA</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recruiter Logos - This was already a good match -->
+            <div class="flex flex-wrap justify-center items-center gap-10">
+                <img src="https://placehold.co/120x60/CCCCCC/FFFFFF?text=VMware" alt="VMware" class="h-10 opacity-60">
+                <img src="https://placehold.co/120x60/CCCCCC/FFFFFF?text=Schindler" alt="Schindler" class="h-10 opacity-60">
+                <img src="https://placehold.co/120x60/CCCCCC/FFFFFF?text=Hitachi" alt="Hitachi" class="h-10 opacity-60">
+                <img src="https://placehold.co/120x60/CCCCCC/FFFFFF?text=Larsen+&+Toubro" alt="L&T" class="h-10 opacity-60">
+                <img src="https://placehold.co/120x60/CCCCCC/FFFFFF?text=Oracle" alt="Oracle" class="h-10 opacity-60">
+            </div>
+        </div>
+    </section>
+    
+    <!-- 7. WHY CHOOSE TINT SECTION -->
+    <!-- This content is kept from the previous version -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 lg:px-8">
+            <h2 class="section-title">Why Should You Choose Techno International New Town?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                <!-- Left: Image -->
+                <div>
+                    <img src="https://placehold.co/600x400/CCCCCC/FFFFFF?text=Campus+Students" alt="Students on campus" class="rounded-lg shadow-lg w-full h-auto object-cover">
+                </div>
+                <!-- Right: Reasons List -->
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="text-3xl font-bold text-red-600 opacity-50">01</div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1">High-Impact Networking Connections</h3>
+                            <p class="text-gray-600">Connect with an extensive network of top CEOs, Nobel Laureates, and industry titans.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="text-3xl font-bold text-red-600 opacity-50">02</div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1">360-degree Support in Building a Personal Brand</h3>
+                            <p class="text-gray-600">We provide dedicated mentorship to help you build your personal and professional brand from day one.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="text-3xl font-bold text-red-600 opacity-50">03</div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1">Multi-Disciplinary University</h3>
+                            <p class="text-gray-600">Explore your interests with a flexible curriculum across Engineering, Management, and Sciences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. NEWS & EVENTS SECTION -->
+    <!-- This content is kept from the previous version -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <h2 class="section-title">News and Events</h2>
+            <p class="section-subtitle">Stay updated with the latest happenings, news, and events at TINT.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- News Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/400x250/CCCCCC/FFFFFF?text=News+Image+1" alt="News 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-red-600 font-medium">Campus Life</span>
+                        <h3 class="text-lg font-semibold my-2 hover:text-red-600"><a href="#">TINT emerges as the Overall Champion at Univesumm 2025</a></h3>
+                        <p class="text-gray-600 text-sm">CU emerges as the Overall Champion at Univesumm... winning 14 Gold, 12 Silver, and 13 Bronze medals.</p>
+                    </div>
+                </div>
+                <!-- News Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/400x250/CCCCCC/FFFFFF?text=News+Image+2" alt="News 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-red-600 font-medium">Academics</span>
+                        <h3 class="text-lg font-semibold my-2 hover:text-red-600"><a href="#">National Conference on Artificial Intelligence (NCAI 2025)</a></h3>
+                        <p class="text-gray-600 text-sm">NCAI 2025 will be a catalyst for change in Healthcare, PE and ME, fostering innovation.</p>
+                    </div>
+                </div>
+                <!-- News Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/400x250/CCCCCC/FFFFFF?text=News+Image+3" alt="News 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-red-600 font-medium">Innovation</span>
+                        <h3 class="text-lg font-semibold my-2 hover:text-red-600"><a href="#">Campus Tank Launches 'Campus Tank' in Collaboration with A-Gen</a></h3>
+                        <p class="text-gray-600 text-sm">To empower India's next generation of startup founders, TINT launches 'Campus Tank'.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. MAIN FOOTER (Sitemap) -->
+    <!-- This content is kept from the previous version -->
+    <footer class="bg-gray-800 text-gray-300 py-16 px-4 lg:px-8">
+        <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <!-- Col 1: Apply Here -->
+            <div>
+                <h4 class="font-bold text-white mb-4">Apply Here</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white">Online Admission</a></li>
+                    <li><a href="#" class="hover:text-white">Admission Process</a></li>
+                    <li><a href="#" class="hover:text-white">Eligibility Criteria</a></li>
+                    <li><a href="#" class="hover:text-white">Scholarship</a></li>
+                    <li><a href="#" class="hover:text-white">Application Forms</a></li>
+                </ul>
+            </div>
+            <!-- Col 2: Learn Here -->
+            <div>
+                <h4 class="font-bold text-white mb-4">Learn Here</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white">Programs</a></li>
+                    <li><a href="#" class="hover:text-white">Departments</a></li>
+                    <li><a href="#" class="hover:text-white">Library</a></li>
+                    <li><a href="#" class="hover:text-white">University Syllabus</a></li>
+                    <li><a href="#" class="hover:text-white">TINT Blogs</a></li>
+                </ul>
+            </div>
+            <!-- Col 3: Visit Here -->
+            <div>
+                <h4 class="font-bold text-white mb-4">Visit Here</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white">IQAC</a></li>
+                    <li><a href="#"
+ class="hover:text-white">RTI</a></li>
+                    <li><a href="#" class="hover:text-white">News</a></li>
+                    <li><a href="#" class="hover:text-white">Events</a></li>
+                    <li><a href="#" class="hover:text-white">Campus Map</a></li>
+                </ul>
+            </div>
+            <!-- Col 4: Live Here -->
+            <div>
+                <h4 class="font-bold text-white mb-4">Live Here</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white">Campus Tour</a></li>
+                    <li><a href="#" class="hover:text-white">Clubs</a></li>
+                    <li><a href="#" class="hover:text-white">Cultural Activities</a></li>
+                    <li><a href="#" class="hover:text-white">Student Welfare</a></li>
+                </ul>
+            </div>
+            <!-- Col 5: Others -->
+            <div>
+                <h4 class="font-bold text-white mb-4">Others</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white">Grievance Redressal</a></li>
+                    <li><a href="#" class="hover:text-white">Mandatory Disclosure</a></li>
+                    <li><a href="#" class="hover:text-white">Policies</a></li>
+                    <li><a href="#" class="hover:text-white">Disclaimer</a></li>
+                </ul>
+            </div>
+            <!-- Col 6: Get in Touch -->
+            <div>
+                <h4 class="font-bold text-white mb-4">Get in Touch</h4>
+                <address class="space-y-2 text-sm not-italic">
+                    <p>Newtown, Kolkata, West Bengal 700156</p>
+                    <p>Phone: <a href="tel:1800121288800" class="hover:text-white">1800 121 288800</a></p>
+                    <p>Email: <a href="mailto:admissions@tint.ac.in" class="hover:text-white">admissions@tint.ac.in</a></p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 10. BOTTOM BAR (Copyright & Social) -->
+    <!-- This content is kept from the previous version -->
+    <div class="bg-gray-900 text-gray-500 py-4 px-4 lg:px-8">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
+            <p class="mb-2 md:mb-0">Copyright © 2025 Techno International New Town. All rights reserved.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-white" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-white" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-white" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-white" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-white" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 11. STICKY FOOTER BAR -->
+    <!-- This content is kept from the previous version -->
+    <div class="sticky-footer-bar">
+        APPLY NOW for TINT-CET - 2026
+    </div>
+
+    <!-- Custom Alert Box (hidden) -->
+    <!-- This content is kept from the previous version -->
+    <div id="custom-alert-container" class="hidden fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
+        <div class="bg-white p-8 rounded-lg shadow-xl max-w-sm w-full">
+            <h3 id="custom-alert-title" class="text-lg font-bold mb-4">Alert</h3>
+            <p id="custom-alert-message" class="text-gray-700 mb-6">Message goes here.</p>
+            <button id="close-alert-btn" class="w-full bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">Close</button>
+        </div>
+    </div>
+
+
+    <!-- *** UPDATED SCRIPT BLOCK *** -->
+    <script>
+    // Wait for the DOM to be fully loaded before running any scripts
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- Custom Alert Function (to avoid window.alert()) ---
+        const alertContainer = document.getElementById('custom-alert-container');
+        const alertTitle = document.getElementById('custom-alert-title');
+        const alertMessage = document.getElementById('custom-alert-message');
+        const closeAlertBtn = document.getElementById('close-alert-btn');
+
+        function showCustomAlert(title, message) {
+            if (alertContainer) {
+                alertTitle.textContent = title;
+                alertMessage.textContent = message;
+                alertContainer.classList.remove('hidden');
+            } else {
+                // Fallback if the custom alert isn't in the DOM
+                console.log(title, message);
+            }
+        }
+
+        if (closeAlertBtn) {
+            closeAlertBtn.addEventListener('click', () => {
+                alertContainer.classList.add('hidden');
+            });
+        }
+
+        // --- Admission Form Submission ---
+        const admissionForm = document.getElementById('hero-admission-form'); // Targets the new form
+        if (admissionForm) {
+            admissionForm.addEventListener('submit', (e) => {
+                e.preventDefault(); // Prevent actual form submission
+                
+                showCustomAlert(
+                    'Application Submitted!', 
+                    'Thank you for your interest in TINT. We will get back to you soon.'
+                );
+                
+                // Clear the form
+                admissionForm.reset();
+            });
+        }
+
+        // --- Mega Menu Positioning Logic ---
+        function positionMegaMenu(triggerEl, megaMenuEl) {
+            if (!triggerEl || !megaMenuEl) return;
+            
+            const btnRect = triggerEl.getBoundingClientRect();
+            const secondaryNavEl = document.querySelector('.secondary-nav').closest('nav');
+            const secRect = secondaryNavEl.getBoundingClientRect();
+            const viewportPadding = 20; // 10px padding on each side
+
+            const desiredMax = 1100;
+            const computedWidth = Math.min(desiredMax, window.innerWidth - viewportPadding);
+            megaMenuEl.style.width = computedWidth + 'px';
+
+            const topPx = Math.max((secRect.bottom), 60);
+            megaMenuEl.style.top = Math.round(topPx) + 'px';
+
+            // --- CENTERING & VIEWPORT CORRECTION LOGIC ---
+            const centerX = btnRect.left + (btnRect.width/2);
+            let leftPx = centerX - (computedWidth / 2);
+
+            // Check right edge
+            if (leftPx + computedWidth > (window.innerWidth - (viewportPadding / 2))) {
+                leftPx = window.innerWidth - computedWidth - (viewportPadding / 2);
+            }
+            // Check left edge
+            if (leftPx < (viewportPadding / 2)) {
+                leftPx = (viewportPadding / 2);
+            }
+            
+            megaMenuEl.style.left = Math.round(leftPx) + 'px';
+            megaMenuEl.style.transform = 'translateX(0)'; // Remove the translateX transform
+        }
+
+        // --- Generic Mega Menu Setup Function ---
+        function setupMegaMenu(triggerId, megaMenuId) {
+            const trigger = document.getElementById(triggerId);
+            const megaMenu = document.getElementById(megaMenuId);
+            let hideTimeout = null;
+
+            if (!trigger || !megaMenu) return; // Exit if elements don't exist
+
+            const show = () => {
+                clearTimeout(hideTimeout);
+                positionMegaMenu(trigger, megaMenu);
+                megaMenu.classList.remove('mega-hidden');
+                megaMenu.classList.add('mega-visible');
+                megaMenu.setAttribute('aria-hidden','false');
+            };
+
+            const hide = () => {
+                hideTimeout = setTimeout(() => {
+                    megaMenu.classList.remove('mega-visible');
+                    megaMenu.classList.add('mega-hidden');
+                    megaMenu.setAttribute('aria-hidden','true');
+                }, 120);
+            };
+
+            trigger.addEventListener('mouseenter', show);
+            trigger.addEventListener('focusin', show);
+            trigger.addEventListener('mouseleave', hide);
+            trigger.addEventListener('focusout', hide);
+            megaMenu.addEventListener('mouseenter', show);
+            megaMenu.addEventListener('mouseleave', hide);
+
+            // Return elements for resize/scroll handlers
+            return { trigger, megaMenu };
+        }
+
+        // --- Setup All Menus ---
+        const menus = [
+            setupMegaMenu('about-trigger', 'about-mega'),
+            setupMegaMenu('academics-trigger', 'academics-mega'),
+            setupMegaMenu('admissions-trigger', 'admissions-mega'),
+            setupMegaMenu('campus-trigger', 'campus-mega'),
+            setupMegaMenu('placements-trigger', 'placements-mega'),
+            setupMegaMenu('research-trigger', 'research-mega')
+        ];
+
+        // --- Special Case for "PROGRAMS" (it's an <a> tag) ---
+        const secondary = document.querySelector('.secondary-nav');
+        let programsBtn = null;
+        if (secondary) {
+            // FIX: Use Array.prototype.slice.call for better compatibility
+            const items = Array.prototype.slice.call(secondary.children);
+            programsBtn = items.find(el => el.id === 'programs-trigger');
+        }
+        const programMega = document.getElementById('program-mega');
+        let programHideTimeout = null;
+
+        if (programsBtn && programMega) {
+            const showProgram = () => {
+                clearTimeout(programHideTimeout);
+                positionMegaMenu(programsBtn, programMega);
+                programMega.classList.remove('mega-hidden');
+                programMega.classList.add('mega-visible');
+                programMega.setAttribute('aria-hidden','false');
+            };
+
+            const hideProgram = () => {
+                programHideTimeout = setTimeout(() => {
+                    programMega.classList.remove('mega-visible');
+                    programMega.classList.add('mega-hidden');
+                    programMega.setAttribute('aria-hidden','true');
+                }, 120);
+            };
+
+            programsBtn.addEventListener('mouseenter', showProgram);
+            programsBtn.addEventListener('focusin', showProgram);
+            programsBtn.addEventListener('mouseleave', hideProgram);
+            programsBtn.addEventListener('focusout', hideProgram);
+            programMega.addEventListener('mouseenter', showProgram);
+            programMega.addEventListener('mouseleave', hideProgram);
+            
+            // Add to menu list for repositioning
+            menus.push({ trigger: programsBtn, megaMenu: programMega });
+        }
+
+
+        // --- Reposition all open menus on resize and scroll ---
+        function repositionAllMenus() {
+            for (const menu of menus) {
+                if (menu && menu.megaMenu && !menu.megaMenu.classList.contains('mega-hidden')) {
+                    positionMegaMenu(menu.trigger, menu.megaMenu);
+                }
+            }
+        }
+        window.addEventListener('resize', repositionAllMenus);
+        window.addEventListener('scroll', repositionAllMenus);
+
+
+        // --- Hero Slider Script ---
+        const slides = document.querySelectorAll('#hero-slides .hero-slide');
+        if (slides.length > 0) {
+            // Use the images you provided
+            const images = [
+              "https://tint.edu.in/images/2022/home-images/home-2022-02-850_478.jpg",
+              "https://mywbut.com/logo_pic/e9c072f4ee787dec368a69fb33a67464.jpg",
+              "https://manageeasy.co.in/wp-content/uploads/2023/06/Techno-International-Newtown-Fees-Structure-for-Btech-Direct-Admission-Management-Quota-Seats.jpg"
+            ];
+
+            slides.forEach((slide, index) => {
+                if (images[index]) {
+                    slide.style.backgroundImage = `url('${images[index]}')`;
+                }
+            });
+
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                slides.forEach((slide) => {
+                    slide.classList.remove('opacity-1');
+                    slide.classList.add('opacity-0');
+                });
+                slides[index].classList.remove('opacity-0');
+                slides[index].classList.add('opacity-1');
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            // Show the first slide immediately
+            showSlide(currentSlide);
+            
+            // Change slide every 4 seconds
+            setInterval(nextSlide, 4000);
+        }
+
+    });
+    </script>
+
+</body>
+</html>
