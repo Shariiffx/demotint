@@ -69,7 +69,7 @@
 <!-- Top Black Header Bar -->
 <div class="bg-black text-white text-sm py-2 px-6 flex flex-wrap justify-between items-center">
     <div class="flex items-center space-x-3">
-        <span>Register Now for CU Joint Campus Placement Programme</span>
+        <span>Register Now for TINT Joint Campus Placement Programme</span>
         <a href="#" class="bg-red-600 text-white font-semibold px-4 py-1 rounded hover:bg-red-700 transition">REGISTER NOW</a>
     </div>
     <div class="flex items-center space-x-4 text-white text-sm">
@@ -166,12 +166,51 @@
             <input type="email" placeholder="STUDENT EMAIL ID" class="w-full px-4 py-3 border border-gray-200 rounded-lg"/>
             <input type="tel" placeholder="STUDENT MOBILE NO" class="w-full px-4 py-3 border border-gray-200 rounded-lg"/>
             <div class="grid grid-cols-2 gap-3">
-              <select class="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-500"><option value="" disabled selected>Select DOB</option></select>
-              <select class="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-500"><option value="" disabled selected>Student City</option></select>
+              <!-- Short DOB select (years) -->
+              <select class="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-500" name="dob">
+                <option value="" disabled selected>Select DOB</option>
+                <option>2008</option>
+                <option>2007</option>
+                <option>2006</option>
+                <option>2005</option>
+                <option>2004</option>
+                <option>2003</option>
+              </select>
+
+              <!-- City -->
+              <select class="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-500" name="city">
+                <option value="" disabled selected>Student City</option>
+                <option>Kolkata</option>
+                <option>Delhi NCR</option>
+                <option>Mumbai</option>
+                <option>Bengaluru</option>
+                <option>Chennai</option>
+                <option>Hyderabad</option>
+                <option>Pune</option>
+                <option>Other</option>
+              </select>
             </div>
             <div class="grid grid-cols-2 gap-3">
-              <select class="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-500"><option value="" disabled selected>Select Discipline</option></select>
-              <select class="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-500"><option value="" disabled selected>Select Program</option></select>
+              <select class="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-500" name="discipline">
+                <option value="" disabled selected>Select Discipline</option>
+                <option>Engineering</option>
+                <option>Management</option>
+                <option>Computer Science</option>
+                <option>Health Sciences</option>
+                <option>Pharmacy</option>
+                <option>Design</option>
+                <option>Hospitality</option>
+              </select>
+              <select class="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-500" name="program">
+                <option value="" disabled selected>Select Program</option>
+                <option>B.Tech</option>
+                <option>BCA</option>
+                <option>BBA</option>
+                <option>B.Sc</option>
+                <option>M.Tech</option>
+                <option>MCA</option>
+                <option>MBA</option>
+              </select>
             </div>
             <div class="text-sm text-gray-500">By submitting this form, I agree to receive notifications from the University in the form of SMS/E-mail/Call.</div>
             <button type="submit" class="bg-red-600 text-white w-full py-3 rounded-lg font-bold">APPLY NOW</button>
@@ -220,7 +259,7 @@
 
     <div class="relative">
       <div class="h-full rounded-lg overflow-hidden">
-        <img src="https://placehold.co/600x500/222/fff?text=TINT" alt="CU" class="w-full h-full object-cover opacity-90">
+        <img src="https://placehold.co/600x500/222/fff?text=TINT" alt="transition-all" class="w-full h-full object-cover opacity-90">
         <div class="absolute inset-0 bg-red-600/85 grid grid-cols-2 grid-rows-2 text-white">
           <div class="flex flex-col items-center justify-center border-r border-b border-white/10 p-6">
             <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM6 18v-1a4 4 0 014-4h4a4 4 0 014 4v1"/></svg>
@@ -245,48 +284,106 @@
 </div>
 
 <!-- ADMISSIONS Mega Menu (positioned under the Admissions button) -->
-<div id="admissions-mega" class="fixed top-[96px] w-[1100px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden" aria-hidden="true">
-  <div class="grid grid-cols-3 gap-6 p-8">
-    <div>
-      <h4 class="text-lg font-bold text-gray-800 mb-4">JOB ORIENTED PROGRAMS</h4>
-      <ul class="space-y-3 text-gray-700">
-        <li><a href="#" class="hover:text-red-600">After 12th</a></li>
-        <li><a href="#" class="hover:text-red-600">After Graduation</a></li>
-        <li><a href="#" class="hover:text-red-600">Leet Programs</a></li>
-        <li><a href="#" class="hover:text-red-600">Specialized Programs</a></li>
-        <li><a href="#" class="hover:text-red-600">Integrated Programs</a></li>
-        <li><a href="#" class="hover:text-red-600">After Post Graduation</a></li>
-        <li><a href="#" class="hover:text-red-600">CU Advantages</a></li>
-        <li><a href="#" class="hover:text-red-600">ABET Engineering Accreditation</a></li>
-      </ul>
+<!-- ADMISSIONS Mega Menu (compact with red panel on the right) -->
+<div id="admissions-mega"
+     class="fixed top-[96px] w-[700px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden"
+     aria-hidden="true">
+
+  <div class="grid grid-cols-4 gap-0">
+    <!-- Left: three columns of links (spans 3 cols) -->
+    <div class="col-span-3 p-4">
+      <div class="grid grid-cols-3 gap-6">
+        <!-- Column 1 -->
+        <div>
+          <h4 class="text-sm font-bold text-gray-800 mb-3">JOB ORIENTED PROGRAMS</h4>
+          <ul class="space-y-2 text-gray-700 text-sm">
+            <li><a href="#" class="hover:text-red-600">After 12th</a></li>
+            <li><a href="#" class="hover:text-red-600">After Graduation</a></li>
+            <li><a href="#" class="hover:text-red-600 underline">Leet Programs</a></li>
+            <li><a href="#" class="hover:text-red-600">Specialized Programs</a></li>
+            <li><a href="#" class="hover:text-red-600">Integrated Programs</a></li>
+            <li><a href="#" class="hover:text-red-600">After Post Graduation</a></li>
+            <li><a href="#" class="hover:text-red-600">CU Advantages</a></li>
+            <li><a href="#" class="hover:text-red-600">ABET Engineering Accreditation</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2 -->
+        <div>
+          <h4 class="text-sm font-bold text-gray-800 mb-3">ADMISSION</h4>
+          <ul class="space-y-2 text-gray-700 text-sm">
+            <li><a href="#" class="hover:text-red-600">Overview</a></li>
+            <li><a href="#" class="hover:text-red-600">Course Fee</a></li>
+            <li><a href="#" class="hover:text-red-600">How to Apply?</a></li>
+            <li><a href="#" class="hover:text-red-600">Admission Criteria</a></li>
+            <li><a href="#" class="hover:text-red-600">CU Scholarship</a></li>
+            <li><a href="#" class="hover:text-red-600">Education Loan</a></li>
+            <li><a href="#" class="hover:text-red-600">Hostel Fee</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div>
+          <h4 class="text-sm font-bold text-gray-800 mb-3">OTHERS</h4>
+          <ul class="space-y-2 text-gray-700 text-sm">
+            <li><a href="#" class="hover:text-red-600">National Admissions</a></li>
+            <li><a href="#" class="hover:text-red-600">International Admissions</a></li>
+            <li><a href="#" class="hover:text-red-600">Admission Offices</a></li>
+            <li><a href="#" class="hover:text-red-600">Visit the Campus</a></li>
+            <li><a href="#" class="hover:text-red-600">Migration Policy</a></li>
+            <li><a href="#" class="hover:text-red-600">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <div>
-      <h4 class="text-lg font-bold text-gray-800 mb-4">ADMISSION</h4>
-      <ul class="space-y-3 text-gray-700">
-        <li><a href="#" class="hover:text-red-600">Overview</a></li>
-        <li><a href="#" class="hover:text-red-600">Course Fee</a></li>
-        <li><a href="#" class="hover:text-red-600">How to Apply?</a></li>
-        <li><a href="#" class="hover:text-red-600">Admission Criteria</a></li>
-        <li><a href="#" class="hover:text-red-600">CU Scholarship</a></li>
-        <li><a href="#" class="hover:text-red-600">Education Loan</a></li>
-        <li><a href="#" class="hover:text-red-600">Hostel Fee</a></li>
-      </ul>
-    </div>
+    <!-- Right: tall red CTA panel (logo / image + 3 CTAs) -->
+    <div class="relative bg-red-600 text-white p-4 rounded-r-lg">
+      <div class="h-full flex flex-col justify-between">
+        <!-- top heading over image -->
+        <div class="mb-2">
+          <div class="bg-[url('https://placehold.co/600x300/222/fff?text=Admissions+Hero')] bg-cover bg-center rounded-md h-24 w-full overflow-hidden relative">
+            <div class="absolute inset-0 bg-red-600/70 flex items-center justify-center p-3">
+              <div class="text-center">
+                <h3 class="text-lg font-bold">Unlock your Career Goals</h3>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <div>
-      <h4 class="text-lg font-bold text-gray-800 mb-4">OTHERS</h4>
-      <ul class="space-y-3 text-gray-700">
-        <li><a href="#" class="hover:text-red-600">National Admissions</a></li>
-        <li><a href="#" class="hover:text-red-600">International Admissions</a></li>
-        <li><a href="#" class="hover:text-red-600">Admission Offices</a></li>
-        <li><a href="#" class="hover:text-red-600">Visit the Campus</a></li>
-        <li><a href="#" class="hover:text-red-600">Migration Policy</a></li>
-        <li><a href="#" class="hover:text-red-600">Refund Policy</a></li>
-      </ul>
+        <!-- icon CTA row -->
+        <div class="grid grid-rows-3 gap-3 text-sm">
+          <a href="#" class="flex flex-col items-center gap-2 p-3 bg-red-700/90 rounded-md hover:bg-red-700 transition">
+            <!-- scholarship icon -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-4 0-7 1.5-7 4v2h14v-2c0-2.5-3-4-7-4zM12 8V4"/>
+            </svg>
+            <div class="text-xs">Scholarships</div>
+          </a>
+
+          <a href="#" class="flex flex-col items-center gap-2 p-3 bg-red-700/85 rounded-md hover:bg-red-700 transition">
+            <!-- loan icon -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v8m-4-4h8"/>
+            </svg>
+            <div class="text-xs">Education Loan</div>
+          </a>
+
+          <a href="#" class="flex flex-col items-center gap-2 p-3 bg-red-700/80 rounded-md hover:bg-red-700 transition">
+            <!-- exam / cucet icon -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6M9 16h6M9 8h6M5 20h14V4H5v16z"/>
+            </svg>
+            <div class="text-xs">CUCET</div>
+          </a>
+        </div>
+
+        <div class="mt-3 text-center text-xs opacity-90">Admissions help & resources →</div>
+      </div>
     </div>
   </div>
 </div>
+
 
 <!-- ACADEMICS Mega Menu (positioned under the Academics button) -->
 <div id="academics-mega" class="fixed top-[96px] w-[1100px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden" aria-hidden="true">
@@ -344,83 +441,136 @@
 </div>
 
 <!-- CAMPUS LIFE Mega Menu (positioned under the Campus Life button) -->
-<div id="campus-mega" class="fixed top-[96px] w-[1100px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden" aria-hidden="true">
-  <div class="bg-red-600/85 text-white p-6 rounded-t-lg">
-    <div class="container mx-auto px-6 flex items-center justify-between">
-      <h3 class="text-2xl font-bold">A Home away from Home</h3>
-      <div class="flex gap-8">
-        <div class="text-center">
-          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
-          <div class="text-sm">Youth Festivals & Summits</div>
+<div id="campus-mega"
+     class="fixed top-[96px] w-[900px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden"
+     aria-hidden="true">
+
+  <div class="grid grid-cols-3"> 
+    <!-- LEFT: two columns of lists (spanning 2 cols) -->
+    <div class="col-span-2 p-6">
+      <div class="grid grid-cols-2 gap-6">
+        <div>
+          <ul class="space-y-3 text-gray-700">
+            <li><a href="#" class="hover:text-red-600">Overview</a></li>
+            <li><a href="#" class="hover:text-red-600">Convocations</a></li>
+            <li><a href="#" class="hover:text-red-600">Live-in-Concerts</a></li>
+            <li><a href="#" class="hover:text-red-600">Tech Invent & Events</a></li>
+            <li><a href="#" class="hover:text-red-600">Cultural & Cosmopolitan</a></li>
+            <li><a href="#" class="hover:text-red-600">Evoke & Youth Summits</a></li>
+            <li><a href="#" class="hover:text-red-600">Glorious Stars at CU</a></li>
+            <li><a href="#" class="hover:text-red-600">Sports & Adventure</a></li>
+            <li><a href="#" class="hover:text-red-600">Latest News</a></li>
+          </ul>
         </div>
-        <div class="text-center">
-          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c2.21 0 4-1.79 4-4"/></svg>
-          <div class="text-sm">Culturally Diverse</div>
-        </div>
-        <div class="text-center">
-          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 20l9-5-9-5-9 5 9 5z"/></svg>
-          <div class="text-sm">Student-Friendly</div>
-        </div>
-        <div class="text-center">
-          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7h18"/></svg>
-          <div class="text-sm">Technology integration</div>
+
+        <div>
+          <ul class="space-y-3 text-gray-700">
+            <li><a href="#" class="hover:text-red-600">Bollywood Celebrities</a></li>
+            <li><a href="#" class="hover:text-red-600">Prominent Visitors</a></li>
+            <li><a href="#" class="hover:text-red-600">CU-RHYTHMS International Folklore Festival</a></li>
+            <li><a href="#" class="hover:text-red-600">National & International Conferences</a></li>
+            <li><a href="#" class="hover:text-red-600">International Faculties</a></li>
+            <li><a href="#" class="hover:text-red-600">Notable Alumni</a></li>
+            <li><a href="#" class="hover:text-red-600">Canadian Alumni Chapter</a></li>
+            <li><a href="#" class="hover:text-red-600">Clubs, Communities, Societies & Chapters</a></li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
-  <div class="grid grid-cols-2 gap-6 p-8">
-    <div>
-      <ul class="space-y-4 text-gray-700">
-        <li><a href="#" class="hover:text-red-600">Overview</a></li>
-        <li><a href="#" class="hover:text-red-600">Convocations</a></li>
-        <li><a href="#" class="hover:text-red-600">Live-in-Concerts</a></li>
-        <li><a href="#" class="hover:text-red-600">Tech Invent & Events</a></li>
-        <li><a href="#" class="hover:text-red-600">Cultural & Cosmopolitan</a></li>
-        <li><a href="#" class="hover:text-red-600">Evoke & Youth Summits</a></li>
-        <li><a href="#" class="hover:text-red-600">Glorious Stars at CU</a></li>
-        <li><a href="#" class="hover:text-red-600">Sports & Adventure</a></li>
-        <li><a href="#" class="hover:text-red-600">Latest News</a></li>
-      </ul>
-    </div>
-    <div>
-      <ul class="space-y-4 text-gray-700">
-        <li><a href="#" class="hover:text-red-600">Bollywood Celebrities</a></li>
-        <li><a href="#" class="hover:text-red-600">Prominent Visitors</a></li>
-        <li><a href="#" class="hover:text-red-600">CU-RHYTHMS International Folklore Festival</a></li>
-        <li><a href="#" class="hover:text-red-600">National & International Conferences</a></li>
-        <li><a href="#" class="hover:text-red-600">International Faculties</a></li>
-        <li><a href="#" class="hover:text-red-600">Notable Alumni</a></li>
-        <li><a href="#" class="hover:text-red-600">Canadian Alumni Chapter</a></li>
-        <li><a href="#" class="hover:text-red-600">Clubs, Communities, Department Societies & Student Chapters</a></li>
-      </ul>
+
+    <!-- RIGHT: vertical red "logo" panel -->
+    <div class="relative bg-red-600 text-white p-4 rounded-r-lg">
+      <div class="flex flex-col items-center gap-4 h-full">
+        <!-- optional top title -->
+        <h3 class="text-lg font-bold text-white text-center">A Home away from Home</h3>
+
+        <!-- icon grid stacked vertically -->
+        <div class="mt-2 w-full grid grid-cols-1 gap-3">
+          <div class="flex items-center gap-3 px-3 py-2 bg-red-700/90 rounded">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
+            <span class="text-sm">Youth Festivals & Summits</span>
+          </div>
+
+          <div class="flex items-center gap-3 px-3 py-2 bg-red-700/85 rounded">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c2.21 0 4-1.79 4-4"/></svg>
+            <span class="text-sm">Culturally Diverse</span>
+          </div>
+
+          <div class="flex items-center gap-3 px-3 py-2 bg-red-700/80 rounded">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 20l9-5-9-5-9 5 9 5z"/></svg>
+            <span class="text-sm">Student-Friendly</span>
+          </div>
+
+          <div class="flex items-center gap-3 px-3 py-2 bg-red-700/75 rounded">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7h18"/></svg>
+            <span class="text-sm">Technology integration</span>
+          </div>
+        </div>
+
+        <!-- optional small footer or CTA -->
+        <div class="mt-auto text-xs opacity-90 text-center px-2">Explore campus life →</div>
+      </div>
     </div>
   </div>
 </div>
 
+
 <!-- PLACEMENTS Mega Menu (positioned under the Placements button) -->
-<div id="placements-mega" class="fixed top-[96px] w-[1100px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden" aria-hidden="true">
-  <div class="grid grid-cols-2 gap-6 p-8">
+<!-- PLACEMENTS Mega — split card matching your image -->
+<div id="placements-mega"
+     class="fixed top-[96px] w-[700px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden"
+     aria-hidden="true">
+
+  <div class="grid grid-cols-2">
+    <!-- LEFT: image hero + red logo panel -->
     <div class="relative">
-      <div class="h-full rounded-lg overflow-hidden">
-        <img src="https://placehold.co/600x700/222/fff?text=Placements+Panel" alt="Placements" class="w-full h-full object-cover opacity-90">
-        <div class="absolute inset-0 bg-red-600/85 grid grid-cols-2 grid-rows-2 text-white">
-          <div class="flex flex-col items-center justify-center border-white/10 p-6">
-            <h3 class="text-2xl font-bold">Most sought after<br/><span class="text-red-200">Destination</span></h3>
+      <!-- Background image (top) and red overlay (bottom) stacked -->
+      <div class="h-[340px] flex flex-col">
+        <!-- Top hero (black & white background) -->
+        <div class="h-1/2 bg-[url('https://placehold.co/800x400/222/fff?text=Campus+Hero')] bg-cover bg-center text-white p-6 flex items-end rounded-l-lg">
+          <div>
+            <h3 class="text-xl font-bold leading-tight">Most sought after<br/><span class="text-3xl text-red-500">Destination</span></h3>
+            <p class="mt-1 text-sm text-white/90">of blue-chip companies</p>
           </div>
-          <div class="flex items-center justify-center border-white/10 p-6">
-            <div class="grid grid-cols-2 gap-6 w-full text-center">
-              <div class="p-4"><img src="https://placehold.co/100x60/fff/000?text=G" alt="Google" class="mx-auto"/><div class="mt-2">Google</div></div>
-              <div class="p-4"><img src="https://placehold.co/100x60/fff/000?text=A" alt="Amazon" class="mx-auto"/><div class="mt-2">Amazon</div></div>
-              <div class="p-4"><img src="https://placehold.co/100x60/fff/000?text=M" alt="Microsoft" class="mx-auto"/><div class="mt-2">Microsoft</div></div>
-              <div class="p-4"><img src="https://placehold.co/100x60/fff/000?text=Mah" alt="Mahindra" class="mx-auto"/><div class="mt-2">Mahindra</div></div>
-            </div>
+        </div>
+
+        <!-- Divider line between hero and logo grid -->
+        <div class="h-px bg-white/30"></div>
+
+        <!-- Bottom red panel with 2x2 logos -->
+        <div class="h-1/2 bg-red-600/95 text-white grid grid-rows-2 grid-cols-2 gap-0">
+          <!-- Google -->
+          <div class="flex flex-col items-center justify-center border-r border-white/20 p-4">
+            <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c51f.png" alt="Google" class="w-14 h-auto mb-3"/>
+            <div class="text-sm">Google</div>
+          </div>
+
+          <!-- Amazon -->
+          <div class="flex flex-col items-center justify-center border-b border-white/10 p-4">
+            <img src="https://i.pinimg.com/736x/d4/9f/a3/d49fa3523c84bef766b4b2bde8296d23.jpg" alt="Amazon" class="w-14 h-auto mb-3"/>
+            <div class="text-sm">Amazon</div>
+          </div>
+
+          <!-- Microsoft -->
+          <div class="flex flex-col items-center justify-center border-r border-white/20 p-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png"
+                 alt="Microsoft" class="w-14 h-auto mb-3"/>
+            <div class="text-sm">Microsoft</div>
+          </div>
+
+          <!-- Mahindra -->
+          <div class="flex flex-col items-center justify-center p-4">
+            <img src="https://i.pinimg.com/736x/53/a7/fb/53a7fbb84490a22043c5c8cbbd57e786.jpg" alt="Mahindra" class="w-14 h-auto mb-3"/>
+            <div class="text-sm">Mahindra</div>
           </div>
         </div>
       </div>
     </div>
 
-    <div>
+    <!-- RIGHT: white links column -->
+    <div class="p-6 bg-white rounded-r-lg">
       <h4 class="text-lg font-bold text-gray-800 mb-4">PLACEMENTS</h4>
+
       <ul class="space-y-3 text-gray-700">
         <li><a href="#" class="hover:text-red-600">About Placements</a></li>
         <li><a href="#" class="hover:text-red-600">Placement Tracker</a></li>
@@ -439,27 +589,60 @@
   </div>
 </div>
 
+
+
 <!-- RESEARCH & INNOVATION Mega Menu (positioned under the Research trigger) -->
-<div id="research-mega" class="fixed top-[96px] w-[1100px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden" aria-hidden="true">
-  <div class="grid grid-cols-2 gap-6 p-0">
+<div id="research-mega"
+     class="fixed top-[96px] w-[650px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden"
+     aria-hidden="true">
+
+  <div class="grid grid-cols-2 gap-3 p-0">
+
+    <!-- Left Panel (Smaller) -->
     <div class="relative">
-      <img src="https://placehold.co/600x700/111/fff?text=Research+Panel" alt="Research" class="w-full h-full object-cover opacity-90 rounded-l-lg">
-      <div class="absolute inset-0 bg-black/50 grid grid-rows-4 gap-4 p-8">
-        <div class="text-white text-3xl font-bold">Our<br/><span class="text-red-500">Intellectual</span><br/>Pursuits</div>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="bg-red-600 rounded-lg p-6 text-white text-center">20000+<div class="text-sm">Research Publications</div></div>
-          <div class="bg-red-600 rounded-lg p-6 text-white text-center">5000+<div class="text-sm">Patents Filed</div></div>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="bg-red-600 rounded-lg p-6 text-white text-center">30<div class="text-sm">Industry Sponsored Labs</div></div>
-          <div class="bg-red-600 rounded-lg p-6 text-white text-center">200<div class="text-sm">Departmental Research Groups</div></div>
+      <div class="h-[260px] rounded-l-lg overflow-hidden">
+        <img src="https://placehold.co/600x400/111/fff?text=Research+Panel"
+             alt="Research"
+             class="w-full h-full object-cover opacity-90">
+
+        <div class="absolute inset-0 bg-black/60 grid grid-rows-4 gap-2 p-4">
+
+          <!-- Title -->
+          <div class="text-white text-xl font-bold leading-tight">
+            Our<br>
+            <span class="text-red-500">Intellectual</span><br>
+            Pursuits
+          </div>
+
+          <!-- Stats Row 1 -->
+          <div class="grid grid-cols-2 gap-2">
+            <div class="bg-red-600 rounded-md p-3 text-white text-center text-sm font-semibold">
+              20000+<div class="text-[11px] font-normal">Research Publications</div>
+            </div>
+            <div class="bg-red-600 rounded-md p-3 text-white text-center text-sm font-semibold">
+              5000+<div class="text-[11px] font-normal">Patents Filed</div>
+            </div>
+          </div>
+
+          <!-- Stats Row 2 -->
+          <div class="grid grid-cols-2 gap-2">
+            <div class="bg-red-600 rounded-md p-3 text-white text-center text-sm font-semibold">
+              30<div class="text-[11px] font-normal">Industry Sponsored Labs</div>
+            </div>
+            <div class="bg-red-600 rounded-md p-3 text-white text-center text-sm font-semibold">
+              200<div class="text-[11px] font-normal">Research Groups</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
 
-    <div class="p-8">
-      <h4 class="text-lg font-bold text-gray-800 mb-4">RESEARCH INTENSIVE UNIVERSITY</h4>
-      <ul class="space-y-3 text-gray-700 mb-6">
+    <!-- Right Panel (Compact) -->
+    <div class="p-4">
+
+      <h4 class="text-sm font-bold text-gray-800 mb-2">RESEARCH INTENSIVE UNIVERSITY</h4>
+      <ul class="space-y-1.5 text-gray-700 text-xs mb-4">
         <li><a href="#" class="hover:text-red-600">Research</a></li>
         <li><a href="#" class="hover:text-red-600">Patents</a></li>
         <li><a href="#" class="hover:text-red-600">Centers Of Research</a></li>
@@ -469,163 +652,348 @@
         <li><a href="#" class="hover:text-red-600">CU Law Review (CULR)</a></li>
       </ul>
 
-      <h4 class="text-lg font-bold text-gray-800 mb-4">ENTREPRENEURSHIP CELLS</h4>
-      <ul class="space-y-3 text-gray-700 mb-6">
+      <h4 class="text-sm font-bold text-gray-800 mb-2">ENTREPRENEURSHIP CELLS</h4>
+      <ul class="space-y-1.5 text-gray-700 text-xs mb-4">
         <li><a href="#" class="hover:text-red-600">Technology Business Incubator (TBI)</a></li>
         <li><a href="#" class="hover:text-red-600">Innovation & Entrepreneurship Development Cell (IEDC)</a></li>
       </ul>
 
-      <h4 class="text-lg font-bold text-gray-800 mb-4">SUSTAINABLE DEVELOPMENT GOALS (SDG'S)</h4>
-      <ul class="space-y-3 text-gray-700">
+      <h4 class="text-sm font-bold text-gray-800 mb-2">SDG INITIATIVES</h4>
+      <ul class="space-y-1.5 text-gray-700 text-xs">
         <li><a href="#" class="hover:text-red-600">Policies & Strategies</a></li>
       </ul>
+
     </div>
   </div>
 </div>
 
 
 <!-- PROGRAMS Mega Menu (positioned under the Programs button) -->
-<div id="program-mega" class="fixed top-[96px] w-[1100px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden" aria-hidden="true">
-  <!-- Top tab-like header -->
-  <div class="flex items-center border-b border-gray-200">
-    <div class="px-6 py-4 border-r border-gray-200 bg-gray-50 font-semibold">REGULAR <span class="ml-2 text-gray-400">⬇</span></div>
-    <div class="flex-1 px-6 py-4 text-sm font-medium">CLICK HERE TO VIEW PROGRAMS OF <span class="font-bold">ONLINE LEARNING (OL)</span> <span class="ml-2">↗</span></div>
+<div id="program-mega"
+     class="fixed top-[96px] w-[680px] max-w-[95vw] bg-white rounded-lg shadow-2xl border border-gray-200 mega-hidden transition-smooth z-50 overflow-hidden"
+     aria-hidden="true">
+
+  <!-- Top header -->
+  <div class="flex items-center border-b border-gray-200 text-sm">
+   
   </div>
 
-  <div class="grid grid-cols-4 gap-6 p-8">
+  <div class="grid grid-cols-4 gap-3 p-4 text-sm">
+
+    <!-- Column 1 -->
     <div>
-      <h4 class="text-lg font-bold text-gray-800 mb-4">REGULAR</h4>
-      <ul class="space-y-3 text-gray-700">
+      <h4 class="text-sm font-bold text-gray-800 mb-2">REGULAR</h4>
+      <ul class="space-y-1.5 text-gray-700 text-xs">
         <li><a href="#" class="hover:text-red-600">Engineering</a></li>
-        <li><a href="#" class="hover:text-red-600">Management (BBA/MBA)</a></li>
-        <li><a href="#" class="hover:text-red-600">Industry Collaborated (BBA/MBA)</a></li>
-        <li><a href="#" class="hover:text-red-600">Computing (BCA/ MCA)</a></li>
-        <li><a href="#" class="hover:text-red-600">Airlines & Airport Management</a></li>
-        <li><a href="#" class="hover:text-red-600">Allied Health Sciences</a></li>
-        <li><a href="#" class="hover:text-red-600">Animation & Multimedia</a></li>
-        <li><a href="#" class="hover:text-red-600">Architecture</a></li>
-        <li><a href="#" class="hover:text-red-600">Arts & Humanities (B.A & M.A)</a></li>
-        <li><a href="#" class="hover:text-red-600">Basic Sciences</a></li>
+        <li><a href="#" class="hover:text-red-600">Management</a></li>
+        <li><a href="#" class="hover:text-red-600">Industry Collaborated</a></li>
+        <li><a href="#" class="hover:text-red-600">Computing</a></li>
+        <li><a href="#" class="hover:text-red-600">Airport Management</a></li>
+        <li><a href="#" class="hover:text-red-600">Health Sciences</a></li>
+        <li><a href="#" class="hover:text-red-600">Animation</a></li>
       </ul>
     </div>
 
+    <!-- Column 2 -->
     <div>
-      <h4 class="text-lg font-bold text-gray-800 mb-4">MORE PROGRAMS</h4>
-      <ul class="space-y-3 text-gray-700">
+      <h4 class="text-sm font-bold text-gray-800 mb-2">MORE PROGRAMS</h4>
+      <ul class="space-y-1.5 text-gray-700 text-xs">
         <li><a href="#" class="hover:text-red-600">Culinary Sciences</a></li>
         <li><a href="#" class="hover:text-red-600">Data Science</a></li>
         <li><a href="#" class="hover:text-red-600">Economics</a></li>
-        <li><a href="#" class="hover:text-red-600">Education (B.A.B.Ed/ B.Sc.B.Ed)</a></li>
-        <li><a href="#" class="hover:text-red-600">Fashion & Design</a></li>
-        <li><a href="#" class="hover:text-red-600">Finance & Accounting</a></li>
-        <li><a href="#" class="hover:text-red-600">Fine Arts</a></li>
-        <li><a href="#" class="hover:text-red-600">Forensic Sciences (B.Sc./M.Sc.)</a></li>
-        <li><a href="#" class="hover:text-red-600">Hotel & Hospitality Management</a></li>
-        <li><a href="#" class="hover:text-red-600">Interior Design</a></li>
+        <li><a href="#" class="hover:text-red-600">Education</a></li>
+        <li><a href="#" class="hover:text-red-600">Fashion</a></li>
+        <li><a href="#" class="hover:text-red-600">Finance</a></li>
+        <li><a href="#" class="hover:text-red-600">Hotel Management</a></li>
       </ul>
     </div>
 
+    <!-- Column 3 -->
     <div>
-      <h4 class="text-lg font-bold text-gray-800 mb-4">ADVANCED PROGRAMS</h4>
-      <ul class="space-y-3 text-gray-700">
-        <li><a href="#" class="hover:text-red-600">MBA Tourism, Hospitality and Aviation</a></li>
+      <h4 class="text-sm font-bold text-gray-800 mb-2">ADVANCED</h4>
+      <ul class="space-y-1.5 text-gray-700 text-xs">
+        <li><a href="#" class="hover:text-red-600">MBA (Tourism)</a></li>
         <li><a href="#" class="hover:text-red-600">Media Studies</a></li>
-        <li><a href="#" class="hover:text-red-600">Medical Lab Technology</a></li>
-        <li><a href="#" class="hover:text-red-600">Nutrition & Dietetics</a></li>
-        <li><a href="#" classa="hover:text-red-600">Optometry</a></li>
-        <li><a href="#" class="hover:text-red-600">Pharma Sciences</a></li>
-        <li><a href="#" class="hover:text-red-600">Physiotherapy</a></li>
-        <li><a href="#" class="hover:text-red-600">Product & Industrial Design</a></li>
+        <li><a href="#" class="hover:text-red-600">Medical Lab</a></li>
+        <li><a href="#" class="hover:text-red-600">Nutrition</a></li>
+        <li><a href="#" class="hover:text-red-600">Optometry</a></li>
+        <li><a href="#" class="hover:text-red-600">Pharma</a></li>
         <li><a href="#" class="hover:text-red-600">Psychology</a></li>
-        <li><a href="#" class="hover:text-red-600">MCA Data Science with Intel</a></li>
       </ul>
     </div>
 
+    <!-- Column 4: Smaller Image Panel -->
     <div class="relative">
-      <div class="h-full rounded-lg overflow-hidden">
-        <img src="https://placehold.co/380x500/222/fff?text=Placements+Panel" alt="Placements" class="w-full h-full object-cover opacity-90">
-        <div class="absolute inset-0 bg-gray-900/70 text-white p-6 flex flex-col justify-center">
-          <h3 class="text-xl font-bold">University with<br/><span class="text-red-500">Best Placements</span></h3>
-          <div class="mt-4 space-y-4">
-            <div class="bg-red-600 rounded px-4 py-3 inline-block">9000+<div class="text-xs">PLACEMENTS</div></div>
-            <div class="bg-red-600 rounded px-4 py-3 inline-block">1.7 CR<div class="text-xs">INTERNATIONAL</div></div>
-            <div class="bg-red-600 rounded px-4 py-3 inline-block">54.75 LPA<div class="text-xs">NATIONAL</div></div>
+      <div class="h-[180px] rounded-md overflow-hidden">
+        <img src="https://placehold.co/300x200/222/fff?text=Placements"
+             class="w-full h-full object-cover opacity-90">
+
+        <div class="absolute inset-0 bg-gray-900/70 text-white p-3 flex flex-col justify-center">
+          <h3 class="text-sm font-bold">
+            University with<br><span class="text-red-500">Best Placements</span>
+          </h3>
+
+          <div class="mt-2 space-y-2 text-[10px]">
+            <div class="bg-red-600 rounded px-2 py-1 inline-block">
+              9000+<div class="text-[9px]">PLACEMENTS</div>
+            </div>
+            <div class="bg-red-600 rounded px-2 py-1 inline-block">
+              1.7 CR<div class="text-[9px]">INTERNATIONAL</div>
+            </div>
+            <div class="bg-red-600 rounded px-2 py-1 inline-block">
+              54.75 LPA<div class="text-[9px]">NATIONAL</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 
-  <!-- Lower quick rows: Doctorate & Study Abroad -->
-  <div class="border-t border-gray-200 px-8 py-6 grid grid-cols-2 gap-6">
+  <!-- Bottom Section (Smaller) -->
+  <div class="border-t border-gray-200 px-4 py-4 grid grid-cols-2 gap-4 text-xs">
     <div>
-      <h5 class="font-bold text-gray-800 mb-3 uppercase">DOCTORATE PROGRAMS</h5>
-      <div class="flex gap-6 text-gray-700">
-        <div>
-          <a href="#" class="block hover:text-red-600">Doctor of Philosophy</a>
-          <a href="#" class="block hover:text-red-600">Ph.D Admissions</a>
-        </div>
-      </div>
+      <h5 class="font-bold text-gray-800 mb-2">DOCTORATE PROGRAMS</h5>
+      <a href="#" class="block hover:text-red-600">Doctor of Philosophy</a>
+      <a href="#" class="block hover:text-red-600">Ph.D Admissions</a>
     </div>
+
     <div>
-      <h5 class="font-bold text-gray-800 mb-3 uppercase">STUDY ABROAD PROGRAMS</h5>
-      <div class="flex gap-6 text-gray-700">
-        <div>
-          <a href="#" class="block hover:text-red-600">Canada</a>
-          <a href="#" class="block hover:text-red-600">USA</a>
-          <a href="#" class="block hover:text-red-600">Australia</a>
-        </div>
-      </div>
+      <h5 class="font-bold text-gray-800 mb-2">STUDY ABROAD</h5>
+      <a href="#" class="block hover:text-red-600">Canada</a>
+      <a href="#" class="block hover:text-red-600">USA</a>
+      <a href="#" class="block hover:text-red-600">Australia</a>
     </div>
   </div>
 </div>
+
     
     <!-- 4. STATS SECTION (Illustrious Legacy) -->
     <!-- This content is kept from the previous version -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 lg:px-8">
-            <h2 class="section-title">An Illustrious Legacy to continue to Shape</h2>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mt-12"> <!-- Changed to 5 columns -->
-                <div class="text-center">
-                    <div class="text-5xl font-extrabold text-red-600">154+</div>
-                    <div class="mt-2 text-lg font-medium text-gray-700">Programs</div>
-                    <p class="text-sm text-gray-500">Industry-Oriented Academic Programs</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-5xl font-extrabold text-red-600">980+</div>
-                    <div class="mt-2 text-lg font-medium text-gray-700">Stalwarts</div>
-                    <p class="text-sm text-gray-500">Industry Stalwarts for Top-Tier Mentorship</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-5xl font-extrabold text-red-600">1350+</div>
-                    <div class="mt-2 text-lg font-medium text-gray-700">Doctoral Faculty</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-5xl font-extrabold text-red-600">300+</div>
-                    <div class="mt-2 text-lg font-medium text-gray-700">International Faculty</div>
-                </div>
-                <div class="text-center col-span-2 md:col-span-1">
-                    <div class="text-5xl font-extrabold text-red-600">100000+</div>
-                    <div class="mt-2 text-lg font-medium text-gray-700">Alumni Across the Globe</div>
-                </div>
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <h2 class="section-title">An Illustrious Legacy to continue to Shape</h2>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mt-12">
+
+            <div class="text-center">
+                <div class="text-5xl font-extrabold text-red-600 counter" data-target="154">0</div>
+                <div class="mt-2 text-lg font-medium text-gray-700">Programs</div>
+                <p class="text-sm text-gray-500">Industry-Oriented Academic Programs</p>
             </div>
+
+            <div class="text-center">
+                <div class="text-5xl font-extrabold text-red-600 counter" data-target="980">0</div>
+                <div class="mt-2 text-lg font-medium text-gray-700">Stalwarts</div>
+                <p class="text-sm text-gray-500">Industry Stalwarts for Top-Tier Mentorship</p>
+            </div>
+
+            <div class="text-center">
+                <div class="text-5xl font-extrabold text-red-600 counter" data-target="1350">0</div>
+                <div class="mt-2 text-lg font-medium text-gray-700">Doctoral Faculty</div>
+            </div>
+
+            <div class="text-center">
+                <div class="text-5xl font-extrabold text-red-600 counter" data-target="300">0</div>
+                <div class="mt-2 text-lg font-medium text-gray-700">International Faculty</div>
+            </div>
+
+            <div class="text-center col-span-2 md:col-span-1">
+                <div class="text-5xl font-extrabold text-red-600 counter" data-target="100000">0</div>
+                <div class="mt-2 text-lg font-medium text-gray-700">Alumni Across the Globe</div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const counters = document.querySelectorAll('.counter');
+    let started = false;
+
+    const startCounting = () => {
+        counters.forEach(counter => {
+            const update = () => {
+                const target = +counter.getAttribute('data-target');
+                const current = +counter.innerText;
+                const increment = target / 200; // Adjust speed here
+
+                if (current < target) {
+                    counter.innerText = Math.ceil(current + increment);
+                    requestAnimationFrame(update);
+                } else {
+                    counter.innerText = target.toLocaleString() + "+";
+                }
+            };
+            update();
+        });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !started) {
+            started = true;
+            startCounting();
+        }
+    }, { threshold: 0.5 });
+
+    observer.observe(document.querySelector("section"));
+});
+</script>
+
 
     <!-- 5. ACCREDITATIONS SECTION -->
     <!-- This content is kept from the previous version -->
-    <section class="py-16">
-        <div class="container mx-auto px-4 lg:px-8">
-            <h2 class="section-title">Proudly Distinguished by Our Prestigious Rankings and AccreditATIONS</h2>
-            <!-- Updated placeholders to match video content -->
-            <div class="flex flex-wrap justify-center items-center gap-12 mt-12">
-                <img src="https://placehold.co/150x80/EEEEEE/777777?text=QS+Rankings" alt="QS University Rankings Asia" class="h-16 opacity-70">
-                <img src="https://placehold.co/150x80/EEEEEE/777777?text=NIRF" alt="NIRF Ranking" class="h-16 opacity-70">
-                <img src="https://placehold.co/150x80/EEEEEE/777777?text=NAAC+A+" alt="NAAC A+ Accreditation" class="h-16 opacity-70">
-                <img src="https://placehold.co/150x80/EEEEEE/777777?text=ABET" alt="ABET Accreditation" class="h-16 opacity-70">
-            </div>
+  <section class="py-16">
+  <div class="container mx-auto px-4 lg:px-8">
+
+    <!-- Centered Heading -->
+    <h2 class="section-title text-center">
+    Proudly Distinguished by Our Prestigious Rankings and AccreditATIONS
+</h2>
+
+
+    <!-- BIGGER Shuffling Rankings Box -->
+    <div class="mt-12 max-w-4xl mx-auto">
+      <a id="news-wrapper" href="#" target="_blank" rel="noopener"
+         class="block relative bg-white border rounded-xl shadow-md p-6 transition-all">
+
+        <div class="flex items-center gap-6">
+          <img id="news-logo" src="" class="h-24 w-auto object-contain opacity-90">
+
+          <div>
+            <div id="news-title" class="text-2xl font-semibold text-gray-900"></div>
+            <div id="news-sub" class="text-lg text-gray-600 mt-1"></div>
+          </div>
         </div>
-    </section>
+      </a>
+
+      <!-- BIGGER Buttons + Dots -->
+      <div class="mt-6 flex justify-between items-center">
+        <button id="prevBtn" class="px-6 py-3 rounded-lg bg-gray-100 hover:bg-gray-200 text-lg">&larr;</button>
+
+        <div id="dots" class="flex gap-3"></div>
+
+        <button id="nextBtn" class="px-6 py-3 rounded-lg bg-gray-100 hover:bg-gray-200 text-lg">&rarr;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    const items = [
+      {
+        title: "148 out of 160 in India — NIRF 2024",
+        sub: "National Institutional Ranking Framework",
+        url: "link",
+        logo: "https://upload.wikimedia.org/wikipedia/en/5/52/National_Institutional_Ranking_Framework_logo.png"
+      },
+      {
+        title: "QS University Rankings — Asia",
+        sub: "QS World Ranking Metrics",
+        url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AQS_University_Rankings_Logo.jpg",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/1/14/Qs_university_ranking.svg"
+      },
+      {
+        title: "NAAC Accredited (B Grade)",
+        sub: "National Assessment & Accreditation Council",
+        url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcochincollege.edu.in%2Fnaac-accredited-with-a-grade-b%2F",
+        logo: "https://upload.wikimedia.org/wikipedia/en/1/1d/NAAC_LOGO.png"
+      },
+      {
+        title: "ABET Accredited Programs",
+        sub: "Accreditation Board for Engineering & Technology",
+        url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cuchd.in%2Fabet%2F",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/f/f3/ABET_logo.svg"
+      }
+    ];
+
+    const wrapper = document.getElementById("news-wrapper");
+    const img = document.getElementById("news-logo");
+    const titleEl = document.getElementById("news-title");
+    const subEl = document.getElementById("news-sub");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const dotsWrap = document.getElementById("dots");
+
+    let order = items.map((_, i) => i);
+    let idx = 0;
+    let interval;
+    const DISPLAY_MS = 3500;
+
+    function renderDots() {
+      dotsWrap.innerHTML = "";
+      order.forEach((o, i) => {
+        const dot = document.createElement("div");
+        dot.className = "w-4 h-4 rounded-full bg-gray-300 cursor-pointer";
+        dot.onclick = () => showIndex(i);
+        dotsWrap.appendChild(dot);
+      });
+      updateDots();
+    }
+
+    function updateDots() {
+      [...dotsWrap.children].forEach((d, i) => {
+        d.classList.toggle("bg-red-600", i === idx);
+        d.classList.toggle("bg-gray-300", i !== idx);
+      });
+    }
+
+    function fadeTo(item) {
+      wrapper.style.opacity = 0;
+      setTimeout(() => {
+        img.src = item.logo;
+        titleEl.innerText = item.title;
+        subEl.innerText = item.sub;
+        wrapper.href = item.url;
+        wrapper.style.opacity = 1;
+      }, 300);
+    }
+
+    function showIndex(pos) {
+      idx = pos;
+      fadeTo(items[order[pos]]);
+      updateDots();
+    }
+
+    function next() {
+      idx < order.length - 1 ? showIndex(idx + 1) : shuffle();
+    }
+
+    function prev() {
+      idx > 0 ? showIndex(idx - 1) : showIndex(order.length - 1);
+    }
+
+    function shuffle() {
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+      showIndex(0);
+      renderDots();
+    }
+
+    function startTimer() {
+      interval = setInterval(next, DISPLAY_MS);
+    }
+
+    function stopTimer() {
+      clearInterval(interval);
+    }
+
+    wrapper.addEventListener("mouseenter", stopTimer);
+    wrapper.addEventListener("mouseleave", startTimer);
+    nextBtn.onclick = () => { next(); stopTimer(); startTimer(); };
+    prevBtn.onclick = () => { prev(); stopTimer(); startTimer(); };
+
+    (function init() {
+      shuffle();
+      renderDots();
+      startTimer();
+    })();
+  })();
+</script>
+
 
     <!-- 6. PLACEMENTS SECTION -->
     <!-- This content is kept from the previous version -->
@@ -634,65 +1002,435 @@
             <h2 class="section-title">The World's Leading Companies Hire Our Talent</h2>
             
             <!-- UPDATED stats to match the video -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center mb-12">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="text-4xl font-extrabold text-red-600">9000+</div>
-                    <div class="mt-2 text-lg font-medium text-gray-700">Placement Offers</div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="text-4xl font-extrabold text-red-600">1100+</div>
-                    <div class="mt-2 text-lg font-medium text-gray-700">Companies Visited</div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="text-4xl font-extrabold text-red-600">54.75 LPA</div>
-                    <div class="mt-2 text-lg font-medium text-gray-700">Highest National Package</div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="text-4xl font-extrabold text-red-600">1.7 CR</div>
-                    <div class="mt-2 text-lg font-medium text-gray-700">Highest International Package</div>
-                </div>
-            </div>
+            <section id="placements" class="py-16">
+  <div class="container mx-auto px-4 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center mb-12">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="text-4xl font-extrabold text-red-600 counter" data-target="9000" data-decimals="0" data-suffix="+">0</div>
+        <div class="mt-2 text-lg font-medium text-gray-700">Placement Offers</div>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="text-4xl font-extrabold text-red-600 counter" data-target="1100" data-decimals="0" data-suffix="+">0</div>
+        <div class="mt-2 text-lg font-medium text-gray-700">Companies Visited</div>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <!-- decimals=2 for 54.75 -->
+        <div class="text-4xl font-extrabold text-red-600 counter" data-target="54.75" data-decimals="2" data-suffix=" LPA">0</div>
+        <div class="mt-2 text-lg font-medium text-gray-700">Highest National Package</div>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <!-- decimals=1 for 1.7 -->
+        <div class="text-4xl font-extrabold text-red-600 counter" data-target="1.7" data-decimals="1" data-suffix=" CR">0</div>
+        <div class="mt-2 text-lg font-medium text-gray-700">Highest International Package</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const counters = document.querySelectorAll('#placements .counter');
+
+  // Easing (easeOutQuad)
+  function easeOutQuad(t) { return t * (2 - t); }
+
+  function animateCounter(el, target, decimals, duration = 1400) {
+    const start = performance.now();
+    const initial = 0;
+    const factor = Math.pow(10, decimals);
+
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutQuad(progress);
+      const current = initial + (target - initial) * eased;
+      // format
+      if (decimals > 0) {
+        el.innerText = (Math.round(current * factor) / factor).toFixed(decimals) + (el.dataset.suffix || '');
+      } else {
+        // show commas for integers
+        el.innerText = Math.round(current).toLocaleString() + (el.dataset.suffix || '');
+      }
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        // ensure exact final value
+        if (decimals > 0) {
+          el.innerText = Number(target).toFixed(decimals) + (el.dataset.suffix || '');
+        } else {
+          el.innerText = Math.round(target).toLocaleString() + (el.dataset.suffix || '');
+        }
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // IntersectionObserver: start when grid is visible
+  const io = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        counters.forEach(el => {
+          if (!el.classList.contains('counted')) {
+            const rawTarget = parseFloat(el.getAttribute('data-target')) || 0;
+            const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+            const duration = parseInt(el.getAttribute('data-duration') || '1400', 10);
+            animateCounter(el, rawTarget, decimals, duration);
+            el.classList.add('counted'); // only once
+          }
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.35 });
+
+  // Observe the parent section so we trigger once when in view
+  const section = document.getElementById('placements');
+  if (section) io.observe(section);
+});
+</script>
+
 
             <!-- Student Spotlights - UPDATED packages to match video -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden flex">
-                    <img src="https://placehold.co/200x300/CCCCCC/FFFFFF?text=Siddhant" alt="Siddhant Bhardwaj" class="w-1/3 object-cover">
-                    <div class="p-6 flex flex-col justify-center">
-                        <h3 class="text-xl font-bold">Siddhant Bhardwaj</h3>
-                        <p class="text-gray-600">Hired by Dr. Dame Mortsit... (from video)</p>
-                        <p class="text-3xl font-bold text-red-600 mt-2">1.7 <span class="text-xl">CRORE</span></p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden flex">
-                    <img src="https://placehold.co/200x300/CCCCCC/FFFFFF?text=Gaurav" alt="Gaurav Kumar" class="w-1/3 object-cover">
-                    <div class="p-6 flex flex-col justify-center">
-                        <h3 class="text-xl font-bold">Gaurav Kumar</h3>
-                        <p class="text-gray-600">Placed at Nutanix</p>
-                        <p class="text-3xl font-bold text-red-600 mt-2">51.00 <span class="text-xl">LPA</span></p>
-                    </div>
-                </div>
-            </div>
+           <section id="alumni-spotlight" class="py-12">
+  <div class="container mx-auto px-4 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-lg shadow-xl overflow-hidden flex group opacity-0 translate-y-6 transition-all duration-700 ease-out alumni-card">
+        <img src="https://i.pinimg.com/736x/6f/a3/6a/6fa36aa2c367da06b2a4c8ae1cf9ee02.jpg"
+             alt="Siddhant Bhardwaj"
+             class="w-1/3 object-cover transform transition-transform duration-500 ease-out group-hover:scale-105 will-change-transform">
+        <div class="p-6 flex flex-col justify-center">
+          <h3 class="text-xl font-bold">Siddhant Bhardwaj</h3>
+          <p class="text-gray-600">Hired by Dr. Dame Mortsit... (from video)</p>
+          <p class="text-3xl font-bold text-red-600 mt-2">
+            <span class="counter" data-target="1.7" data-decimals="1" data-suffix=" CRORE">0</span>
+            <span class="sr-only"> 1.7 Crore</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-lg shadow-xl overflow-hidden flex group opacity-0 translate-y-6 transition-all duration-700 ease-out alumni-card">
+        <img src="https://i.pinimg.com/736x/21/24/92/21249201424022cdd93cd144f099b056.jpg"
+             alt="Gaurav Kumar"
+             class="w-1/3 object-cover transform transition-transform duration-500 ease-out group-hover:scale-105 will-change-transform">
+        <div class="p-6 flex flex-col justify-center">
+          <h3 class="text-xl font-bold">Gaurav Kumar</h3>
+          <p class="text-gray-600">Placed at Nutanix</p>
+          <p class="text-3xl font-bold text-red-600 mt-2">
+            <span class="counter" data-target="51.00" data-decimals="2" data-suffix=" LPA">0</span>
+            <span class="sr-only"> 51 L P A</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  // Respect reduced motion preference
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Count animation (supports decimals)
+  function animateNumber(el, target, decimals = 0, duration = 900) {
+    if (prefersReduced) {
+      // Immediately set final value for reduced-motion users
+      setFinal(el, target, decimals);
+      return;
+    }
+    const start = performance.now();
+    const startVal = 0;
+    const factor = Math.pow(10, decimals);
+
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // easeOutQuad
+      const eased = 1 - (1 - progress) * (1 - progress);
+      const current = startVal + (target - startVal) * eased;
+
+      if (decimals > 0) {
+        el.textContent = (Math.round(current * factor) / factor).toFixed(decimals) + (el.dataset.suffix || '');
+      } else {
+        el.textContent = Math.round(current).toLocaleString() + (el.dataset.suffix || '');
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        setFinal(el, target, decimals);
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function setFinal(el, target, decimals) {
+    if (decimals > 0) {
+      el.textContent = Number(target).toFixed(decimals) + (el.dataset.suffix || '');
+    } else {
+      el.textContent = Math.round(target).toLocaleString() + (el.dataset.suffix || '');
+    }
+  }
+
+  // Reveal + trigger counters when card enters viewport
+  const cards = document.querySelectorAll('.alumni-card');
+  const counters = document.querySelectorAll('.alumni-card .counter');
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          // reveal animation: remove opacity/translate classes by toggling to final state
+          el.classList.remove('opacity-0', 'translate-y-6');
+          el.classList.add('opacity-100', 'translate-y-0');
+
+          // animate counters inside this card (only once)
+          const localCounters = el.querySelectorAll('.counter');
+          localCounters.forEach(c => {
+            if (!c.dataset.animated) {
+              const rawTarget = parseFloat(c.getAttribute('data-target')) || 0;
+              const decimals = parseInt(c.getAttribute('data-decimals') || '0', 10);
+              const durationAttr = parseInt(c.getAttribute('data-duration') || '900', 10);
+              animateNumber(c, rawTarget, decimals, durationAttr);
+              c.dataset.animated = 'true';
+            }
+          });
+
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.25 });
+
+    cards.forEach(c => io.observe(c));
+  } else {
+    // fallback: reveal all & set final numbers
+    cards.forEach(el => el.classList.remove('opacity-0', 'translate-y-6'));
+    counters.forEach(c => {
+      const rawTarget = parseFloat(c.getAttribute('data-target')) || 0;
+      const decimals = parseInt(c.getAttribute('data-decimals') || '0', 10);
+      setFinal(c, rawTarget, decimals);
+    });
+  }
+
+  // small hover micro-interaction already set via Tailwind group-hover:scale-105 on images.
+  // Optionally, add keyboard focus scale for accessibility:
+  document.querySelectorAll('.alumni-card').forEach(card => {
+    card.addEventListener('focusin', () => {
+      const img = card.querySelector('img');
+      if (img) img.style.transform = 'scale(1.05)';
+    });
+    card.addEventListener('focusout', () => {
+      const img = card.querySelector('img');
+      if (img) img.style.transform = '';
+    });
+  });
+})();
+</script>
 
             <!-- Recruiter Logos - This was already a good match -->
-            <div class="flex flex-wrap justify-center items-center gap-10">
-                <img src="https://placehold.co/120x60/CCCCCC/FFFFFF?text=VMware" alt="VMware" class="h-10 opacity-60">
-                <img src="https://placehold.co/120x60/CCCCCC/FFFFFF?text=Schindler" alt="Schindler" class="h-10 opacity-60">
-                <img src="https://placehold.co/120x60/CCCCCC/FFFFFF?text=Hitachi" alt="Hitachi" class="h-10 opacity-60">
-                <img src="https://placehold.co/120x60/CCCCCC/FFFFFF?text=Larsen+&+Toubro" alt="L&T" class="h-10 opacity-60">
-                <img src="https://placehold.co/120x60/CCCCCC/FFFFFF?text=Oracle" alt="Oracle" class="h-10 opacity-60">
-            </div>
-        </div>
-    </section>
+       
+
+<section class="py-12">
+  <div class="container mx-auto px-4 lg:px-8">
+  <h2 class="section-title text-center font-extrabold text-3xl md:text-4xl">
+ Our Recruiting Partners
+</h2>
+
+    <div class="relative overflow-hidden bg-white rounded-lg p-4">
+      <!-- viewport -->
+      <div id="marquee-viewport" class="w-full overflow-hidden">
+        <div id="marquee-track" class="flex items-center gap-6 will-change-transform"></div>
+      </div>
+
+      <!-- controls -->
+      <div class="absolute right-3 top-3 flex gap-2">
+        <button id="marquee-pause" class="p-1 rounded bg-gray-100 hover:bg-gray-200" aria-label="Pause">⏸</button>
+        <button id="marquee-play" class="p-1 rounded bg-gray-100 hover:bg-gray-200" aria-label="Play">▶️</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .logo-item { flex: 0 0 auto; display:flex; align-items:center; justify-content:center; padding: 8px 18px; }
+  .logo-item img { display:block; max-width: 140px; max-height: 64px; opacity: .9; filter: grayscale(.06); transition: transform 260ms, opacity 260ms; }
+  .logo-item:focus-within img, .logo-item:hover img { transform: scale(1.04); opacity: 1; filter: none; }
+  @media (min-width: 768px) {
+    .logo-item img { max-width: 160px; max-height: 72px; }
+  }
+</style>
+
+<script>
+(function () {
+  // ====== use your provided logos array ======
+  const logos = [
+    { name: 'VMware', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Vmware_workstation_16_icon.svg/1280px-Vmware_workstation_16_icon.svg.png' },
+    { name: 'Schindler', src: 'https://upload.wikimedia.org/wikipedia/en/d/d2/Logo-schindler.png' },
+    { name: 'Hitachi', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Hitachi_2025_logo.svg/1920px-Hitachi_2025_logo.svg.png' },
+    { name: 'Larsen & Toubro', src: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Larsen%26Toubro_logo.svg/1280px-Larsen%26Toubro_logo.svg.png' },
+    { name: 'Oracle', src: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg' },
+    { name: 'Microsoft', src: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg' },
+    { name: 'Google', src: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg' },
+    { name: 'Amazon', src: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg' },
+    { name: 'Cognizant', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Cognizant_logo_2022.svg/1920px-Cognizant_logo_2022.svg.png' },
+    { name: 'Infosys', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/1920px-Infosys_logo.svg.png' },
+    { name: 'TCS', src: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Tata_Consultancy_Services.svg/1920px-Tata_Consultancy_Services.svg.png' },
+    { name: 'Nutanix', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Nutanix-Logo-Charcoal-Gray-Digital.svg/1920px-Nutanix-Logo-Charcoal-Gray-Digital.svg.png' }
+  ];
+
+  // smooth speed (px / second). Increase to go faster.
+  let PX_PER_SECOND = 60;
+
+  // Number of duplicated sets (2 gives continuous loop)
+  const DUPLICATE_SETS = 2;
+
+  // DOM refs
+  const track = document.getElementById('marquee-track');
+  const viewport = document.getElementById('marquee-viewport');
+  const btnPause = document.getElementById('marquee-pause');
+  const btnPlay = document.getElementById('marquee-play');
+
+  // build item element
+  function makeItem(logo) {
+    const item = document.createElement('div');
+    item.className = 'logo-item';
+    item.setAttribute('role','listitem');
+    const img = document.createElement('img');
+    img.src = logo.src;
+    img.alt = logo.name + ' logo';
+    img.loading = 'lazy';
+    item.appendChild(img);
+    return item;
+  }
+
+  // populate track with duplicate sets for seamless loop
+  function populateTrack() {
+    track.innerHTML = '';
+    for (let s = 0; s < DUPLICATE_SETS; s++) {
+      logos.forEach(l => track.appendChild(makeItem(l)));
+    }
+  }
+
+  populateTrack();
+
+  // measure width of one logical set (sum widths of first logos.length items)
+  function measureSetWidth() {
+    const items = track.querySelectorAll('.logo-item');
+    if (!items.length) return 0;
+    let width = 0;
+    for (let i = 0; i < logos.length; i++) {
+      const r = items[i].getBoundingClientRect();
+      width += r.width;
+    }
+    // approximate gaps by measuring neighbor distance
+    if (items.length > 1) {
+      const r0 = items[0].getBoundingClientRect();
+      const r1 = items[1].getBoundingClientRect();
+      const gap = r1.left - (r0.left + r0.width);
+      if (!Number.isNaN(gap)) width += gap * (logos.length - 1);
+    }
+    return Math.max(1, Math.round(width));
+  }
+
+  // state
+  let setWidth = 0;
+  let offset = 0;       // px translateX
+  let lastTime = null;
+  let rafId = null;
+  let running = true;
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // animation frame step
+  function step(ts) {
+    if (!lastTime) lastTime = ts;
+    const dt = ts - lastTime;
+    lastTime = ts;
+    if (running && !prefersReduced) {
+      offset -= (PX_PER_SECOND * dt) / 1000;
+      // wrap when one set passed
+      if (Math.abs(offset) >= setWidth) {
+        offset += setWidth;
+      }
+      track.style.transform = `translateX(${offset}px)`;
+    }
+    rafId = requestAnimationFrame(step);
+  }
+
+  function start() {
+    if (rafId) cancelAnimationFrame(rafId);
+    lastTime = null;
+    running = true;
+    rafId = requestAnimationFrame(step);
+  }
+  function stop() {
+    running = false;
+  }
+
+  // controls
+  btnPause.addEventListener('click', stop);
+  btnPlay.addEventListener('click', () => { running = true; });
+
+  // pause on hover/focus for accessibility
+  ['mouseenter','focusin'].forEach(e => viewport.addEventListener(e, stop));
+  ['mouseleave','focusout'].forEach(e => viewport.addEventListener(e, () => { running = true; }));
+
+  // recalc sizes (on load and resize)
+  function recalc() {
+    // small timeout to let images layout
+    setTimeout(() => {
+      setWidth = measureSetWidth();
+      // reset offset so transform starts cleanly
+      offset = 0;
+      track.style.transition = 'none';
+      track.style.transform = `translateX(${offset}px)`;
+      void track.offsetWidth; // reflow
+      track.style.transition = '';
+    }, 60);
+  }
+
+  // handle window resize & image loads
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(recalc, 120);
+  });
+
+  track.querySelectorAll('img').forEach(img => {
+    if (!img.complete) img.addEventListener('load', recalc);
+  });
+
+  // init
+  recalc();
+  start();
+
+  // optional: expose control in console for debugging
+  window.__logoMarquee = {
+    play() { running = true; },
+    pause() { running = false; },
+    setSpeed(pxPerSecond) { PX_PER_SECOND = pxPerSecond; }
+  };
+})();
+</script>
+
+
     
     <!-- 7. WHY CHOOSE TINT SECTION -->
     <!-- This content is kept from the previous version -->
     <section class="py-16">
         <div class="container mx-auto px-4 lg:px-8">
-            <h2 class="section-title">Why Should You Choose Techno International New Town?</h2>
+           <h2 class="section-title text-center font-extrabold text-3xl md:text-4xl">
+  Why Should You Choose Techno International New Town?
+</h2>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
                 <!-- Left: Image -->
                 <div>
-                    <img src="https://placehold.co/600x400/CCCCCC/FFFFFF?text=Campus+Students" alt="Students on campus" class="rounded-lg shadow-lg w-full h-auto object-cover">
+                    <img src="https://tint.edu.in/images/2022/home-images/home-2022-08-850_478.jpg" alt="Students on campus" class="rounded-lg shadow-lg w-full h-auto object-cover">
                 </div>
                 <!-- Right: Reasons List -->
                 <div class="space-y-6">
@@ -725,40 +1463,197 @@
     <!-- 8. NEWS & EVENTS SECTION -->
     <!-- This content is kept from the previous version -->
     <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 lg:px-8">
-            <h2 class="section-title">News and Events</h2>
-            <p class="section-subtitle">Stay updated with the latest happenings, news, and events at TINT.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- News Card 1 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/400x250/CCCCCC/FFFFFF?text=News+Image+1" alt="News 1" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <span class="text-sm text-red-600 font-medium">Campus Life</span>
-                        <h3 class="text-lg font-semibold my-2 hover:text-red-600"><a href="#">TINT emerges as the Overall Champion at Univesumm 2025</a></h3>
-                        <p class="text-gray-600 text-sm">CU emerges as the Overall Champion at Univesumm... winning 14 Gold, 12 Silver, and 13 Bronze medals.</p>
-                    </div>
-                </div>
-                <!-- News Card 2 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/400x250/CCCCCC/FFFFFF?text=News+Image+2" alt="News 2" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <span class="text-sm text-red-600 font-medium">Academics</span>
-                        <h3 class="text-lg font-semibold my-2 hover:text-red-600"><a href="#">National Conference on Artificial Intelligence (NCAI 2025)</a></h3>
-                        <p class="text-gray-600 text-sm">NCAI 2025 will be a catalyst for change in Healthcare, PE and ME, fostering innovation.</p>
-                    </div>
-                </div>
-                <!-- News Card 3 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/400x250/CCCCCC/FFFFFF?text=News+Image+3" alt="News 3" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <span class="text-sm text-red-600 font-medium">Innovation</span>
-                        <h3 class="text-lg font-semibold my-2 hover:text-red-600"><a href="#">Campus Tank Launches 'Campus Tank' in Collaboration with A-Gen</a></h3>
-                        <p class="text-gray-600 text-sm">To empower India's next generation of startup founders, TINT launches 'Campus Tank'.</p>
-                    </div>
-                </div>
-            </div>
+  <div class="container mx-auto px-4 lg:px-8">
+    <!-- Animated Heading -->
+    <h2 class="section-title text-center font-extrabold text-3xl md:text-4xl transform transition-all duration-700"
+        id="news-heading">
+      News and Events
+      <span class="block mx-auto mt-3 h-1 w-24 bg-gradient-to-r from-red-600 via-red-400 to-red-600 rounded-full transform scale-x-0 origin-left" id="heading-underline"></span>
+    </h2>
+
+    <h4 class="section-subtitle text-center font-extrabold text-gray-600 mt-4 opacity-0 transform translate-y-2"
+        id="news-sub">
+      Stay updated with the latest happenings, news, and events at TINT.
+    </h4>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8" id="news-grid">
+      <!-- News Card 1 -->
+      <article class="news-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-600 will-change-transform"
+               tabindex="0" aria-labelledby="news1-title" data-index="0">
+        <div class="overflow-hidden h-48">
+          <img src="https://tint.edu.in/images/2022/home-images/home-2022-02-850_478.jpg" alt="News 1"
+               class="w-full h-full object-cover transform transition-transform duration-700">
         </div>
-    </section>
+        <div class="p-6">
+          <span class="badge inline-block text-sm text-red-600 font-medium mb-2 opacity-0 transform scale-95">Campus Life</span>
+          <h3 id="news1-title" class="text-lg font-semibold my-2 hover:text-red-600 transition-colors duration-300">
+            <a href="#" class="inline-block link-underline">TINT emerges as the Overall Champion at Univesumm 2025</a>
+          </h3>
+          <p class="text-gray-600 text-sm">CU emerges as the Overall Champion at Univesumm... winning 14 Gold, 12 Silver, and 13 Bronze medals.</p>
+        </div>
+      </article>
+
+      <!-- News Card 2 -->
+      <article class="news-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-600 will-change-transform"
+               tabindex="0" aria-labelledby="news2-title" data-index="1">
+        <div class="overflow-hidden h-48">
+          <img src="https://tint.edu.in/images/icdai2024/4.jpg#joomlaImage://local-images/icdai2024/4.jpg?width=2048&height=1365" alt="News 2"
+               class="w-full h-full object-cover transform transition-transform duration-700">
+        </div>
+        <div class="p-6">
+          <span class="badge inline-block text-sm text-red-600 font-medium mb-2 opacity-0 transform scale-95">Academics</span>
+          <h3 id="news2-title" class="text-lg font-semibold my-2 hover:text-red-600 transition-colors duration-300">
+            <a href="#" class="inline-block link-underline">National Conference on Artificial Intelligence (NCAI 2025)</a>
+          </h3>
+          <p class="text-gray-600 text-sm">NCAI 2025 will be a catalyst for change in Healthcare, PE and ME, fostering innovation.</p>
+        </div>
+      </article>
+
+      <!-- News Card 3 -->
+      <article class="news-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-600 will-change-transform"
+               tabindex="0" aria-labelledby="news3-title" data-index="2">
+        <div class="overflow-hidden h-48">
+          <img src="https://tint.edu.in/images/2025/IncubES_2025_2.jpg#joomlaImage://local-images/2025/IncubES_2025_2.jpg?width=2048&height=1365" alt="News 3"
+               class="w-full h-full object-cover transform transition-transform duration-700">
+        </div>
+        <div class="p-6">
+          <span class="badge inline-block text-sm text-red-600 font-medium mb-2 opacity-0 transform scale-95">Innovation</span>
+          <h3 id="news3-title" class="text-lg font-semibold my-2 hover:text-red-600 transition-colors duration-300">
+            <a href="#" class="inline-block link-underline">Campus Tank Launches 'Campus Tank' in Collaboration with A-Gen</a>
+          </h3>
+          <p class="text-gray-600 text-sm">To empower India's next generation of startup founders, TINT launches 'Campus Tank'.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* extra animations & hover tilt */
+  .news-card:hover { transform: translateY(-8px) rotateZ(-0.5deg) scale(1.01); box-shadow: 0 18px 40px rgba(15,23,42,0.12); }
+  .news-card:focus { outline: none; transform: translateY(-6px) rotateZ(-0.3deg) scale(1.01); box-shadow: 0 14px 34px rgba(15,23,42,0.12); }
+
+  .news-card .badge { display:inline-block; padding:0.25rem 0.5rem; border-radius:9999px; background:rgba(254,226,226,0.06); }
+
+  /* link underline animation */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size .32s ease;
+  }
+  .link-underline:hover, .link-underline:focus { background-size: 100% 2px; }
+
+  /* initial hidden state for reveal */
+  .news-card { opacity: 0; transform: translateY(18px) scale(0.995); }
+  .news-card.in-view { opacity: 1; transform: translateY(0) scale(1); }
+
+  /* badge pop */
+  .badge.pulse { animation: badgePop .5s cubic-bezier(.2,.9,.3,1) both; }
+  @keyframes badgePop {
+    0% { transform: scale(.85); opacity: 0; }
+    60% { transform: scale(1.08); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* heading underline slide */
+  #heading-underline { transform-origin: left; transition: transform 650ms cubic-bezier(.22,.9,.16,1); }
+  #heading-underline.show { transform: scaleX(1); }
+
+  /* heading pop */
+  #news-heading.pop { transform: translateY(-6px) scale(1.01); }
+
+  /* subtitle reveal */
+  #news-sub.in-view { opacity: 1; transform: translateY(0); transition: opacity 600ms ease, transform 600ms ease; }
+
+  /* respects reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .news-card, #news-sub, #heading-underline { transition: none !important; animation: none !important; transform: none !important; opacity: 1 !important; }
+  }
+</style>
+
+<script>
+  (function () {
+    // Respect reduced motion preference
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Heading underline animation
+    const headingUnderline = document.getElementById('heading-underline');
+    const newsHeading = document.getElementById('news-heading');
+    const newsSub = document.getElementById('news-sub');
+
+    // Staggered reveal for cards
+    const cards = Array.from(document.querySelectorAll('.news-card'));
+
+    if (prefersReduced) {
+      // Immediately show everything for reduced-motion users
+      headingUnderline.classList.add('show');
+      newsHeading.classList.add('pop');
+      newsSub.classList.add('in-view');
+      cards.forEach(c => c.classList.add('in-view'));
+      const badges = document.querySelectorAll('.badge');
+      badges.forEach(b => b.classList.add('pulse'));
+      return;
+    }
+
+    // When heading enters viewport, animate underline and heading
+    const headingObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          headingUnderline.classList.add('show');
+          newsHeading.classList.add('pop');
+          // subtitle delayed reveal
+          setTimeout(() => newsSub.classList.add('in-view'), 200);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    headingObserver.observe(newsHeading);
+
+    // Reveal cards with stagger using IntersectionObserver
+    const io = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const card = entry.target;
+          // use data-index for stagger (fallback to computed index)
+          const idx = parseInt(card.getAttribute('data-index') || cards.indexOf(card), 10);
+          const delay = Math.min(400, idx * 120); // ms
+          setTimeout(() => {
+            card.classList.add('in-view');
+            // image zoom-in slightly when revealed
+            const img = card.querySelector('img');
+            if (img) img.style.transform = 'scale(1.04)';
+            // badge pulse
+            const badge = card.querySelector('.badge');
+            if (badge) badge.classList.add('pulse');
+          }, delay);
+          observer.unobserve(card);
+        }
+      });
+    }, { threshold: 0.25 });
+
+    cards.forEach(c => io.observe(c));
+
+    // Subtle hover image transform handled by CSS; restore transform on mouseleave to allow hover zoom again
+    document.querySelectorAll('.news-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        const img = card.querySelector('img');
+        if (img) img.style.transform = 'scale(1.08)';
+      });
+      card.addEventListener('mouseleave', () => {
+        const img = card.querySelector('img');
+        if (img) img.style.transform = 'scale(1.04)';
+      });
+
+      // keyboard focus visual parity
+      card.addEventListener('focusin', () => {
+        card.classList.add('in-view');
+      });
+    });
+  })();
+</script>
 
     <!-- 9. MAIN FOOTER (Sitemap) -->
     <!-- This content is kept from the previous version -->
